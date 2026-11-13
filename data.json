@@ -1,0 +1,58 @@
+﻿{
+    "timestamp":  1794560550302,
+    "version":  "2.0",
+    "classes":  [
+                    {
+                        "target":  "Mục tiêu đạt 9.0+ kỳ thi THPT Quốc Gia môn Toán",
+                        "id":  "class-1",
+                        "feePerSession":  250000,
+                        "color":  "indigo",
+                        "schedule":  "Thứ Ba, Thứ Sáu (19:30 - 21:00)",
+                        "parentName":  "Chị Mai",
+                        "name":  "Lớp 12A - Toán THPT Quốc Gia",
+                        "subject":  "Toán 12 Nâng Cao",
+                        "colorHex":  "#4f46e5",
+                        "phone":  "0912.345.678",
+                        "student":  "Nguyễn Hoàng Nam"
+                    },
+                    {
+                        "target":  "Nắm chắc kiến thức điện từ học, giải các bài toán sóng dao động",
+                        "id":  "class-2",
+                        "feePerSession":  300000,
+                        "color":  "emerald",
+                        "schedule":  "Thứ Tư, Chủ Nhật (17:30 - 19:00)",
+                        "parentName":  "Bác Thanh",
+                        "name":  "Lớp 11B - Vật Lý VIP",
+                        "subject":  "Vật Lý 11 Chuyên Đề",
+                        "colorHex":  "#10b981",
+                        "phone":  "0988.765.432",
+                        "student":  "Trần Minh Quân \u0026 Lê Hải Đăng"
+                    },
+                    {
+                        "target":  "Cân bằng phản ứng oxi hóa khử, nắm vững bảng tuần hoàn hóa học",
+                        "id":  "class-3",
+                        "feePerSession":  220000,
+                        "color":  "purple",
+                        "schedule":  "Thứ Hai, Thứ Năm (19:00 - 20:30)",
+                        "parentName":  "Cô Hạnh",
+                        "name":  "Lớp 10C - Hóa Học Nền Tảng",
+                        "subject":  "Hóa Học 10",
+                        "colorHex":  "#a855f7",
+                        "phone":  "0903.112.233",
+                        "student":  "Phạm Quỳnh Anh"
+                    },
+                    {
+                        "target":  "Chắc 8.5+ Toán vào lớp 10, thành thạo Vi-ét và hình học đường tròn",
+                        "id":  "class-4",
+                        "feePerSession":  250000,
+                        "color":  "amber",
+                        "schedule":  "Thứ Bảy, Chủ Nhật (08:30 - 10:00)",
+                        "parentName":  "Chị Lan",
+                        "name":  "Lớp 9D - Luyện Thi Vào 10",
+                        "subject":  "Toán 9 Tuyển Sinh 10",
+                        "colorHex":  "#f59e0b",
+                        "phone":  "0977.889.900",
+                        "student":  "Đỗ Tuấn Kiệt"
+                    }
+                ]
+}

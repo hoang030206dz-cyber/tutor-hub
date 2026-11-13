@@ -387,11 +387,14 @@ function generateDefaultExams() {
 }
 
 // --- DEFAULT SETTINGS & VIETQR CONFIGURATION ---
+const DEFAULT_SYNC_ROOM = 'giasu-hoang030206';
+const ONLINE_PRODUCTION_URL = 'https://hoang030206dz-cyber.github.io/tutor-hub/';
+
 const DEFAULT_SETTINGS = {
   bankId: 'MB',
   bankAccount: '',
   bankAccountName: '',
-  syncCode: 'giasu-' + Math.random().toString(36).substring(2, 8),
+  syncCode: DEFAULT_SYNC_ROOM,
   adminPin: '1234',
   tuitionStatus: {} // { 'class-1-2026-11': 'paid' | 'unpaid' }
 };
@@ -431,9 +434,9 @@ const AppState = {
       this.theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       this.settings = storedSettings ? { ...DEFAULT_SETTINGS, ...JSON.parse(storedSettings) } : { ...DEFAULT_SETTINGS };
 
-      // Ensure syncCode exists
-      if (!this.settings.syncCode) {
-        this.settings.syncCode = 'giasu-' + Math.random().toString(36).substring(2, 8);
+      // Ensure consistent syncCode across all devices
+      if (!this.settings.syncCode || (this.settings.syncCode.startsWith('giasu-') && this.settings.syncCode.length <= 15 && this.settings.syncCode !== DEFAULT_SYNC_ROOM)) {
+        this.settings.syncCode = DEFAULT_SYNC_ROOM;
       }
 
       // Save initial state if not existed
@@ -1185,7 +1188,8 @@ function renderParentReport() {
   // Generate formatted Raw Zalo text
   const rawMsgTextarea = document.getElementById('report-raw-message');
   if (rawMsgTextarea) {
-    const baseUrl = window.location.href.split('?')[0];
+    const isPublicWeb = window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.startsWith('192.168.') && !window.location.hostname.startsWith('127.0.0.');
+    const baseUrl = isPublicWeb ? window.location.href.split('?')[0] : ONLINE_PRODUCTION_URL;
     const parentUrl = `${baseUrl}?view=parent&class=${currentClass.id}&code=${AppState.settings.syncCode}`;
 
     let msg = `Kính gửi ${currentClass.parentName || 'Quý phụ huynh'},\n\n`;
@@ -1280,14 +1284,15 @@ function renderClassSettings() {
   if (bankNameEl && AppState.settings) bankNameEl.value = AppState.settings.bankAccountName || '';
 
   // Populate Cloud Sync Settings in Tab 6 & Modal
-  const syncCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : 'giasu-hub';
+  const syncCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : DEFAULT_SYNC_ROOM;
   const syncCodeEl = document.getElementById('setting-sync-code');
   if (syncCodeEl) syncCodeEl.value = syncCode;
   const modalSyncCode = document.getElementById('modal-sync-code-input');
   if (modalSyncCode) modalSyncCode.value = syncCode;
 
   // Render Pairing QR Code
-  const baseUrl = window.location.href.split('?')[0];
+  const isPublicWeb = window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.startsWith('192.168.') && !window.location.hostname.startsWith('127.0.0.');
+  const baseUrl = isPublicWeb ? window.location.href.split('?')[0] : ONLINE_PRODUCTION_URL;
   const pairingUrl = `${baseUrl}?sync=${syncCode}`;
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(pairingUrl)}`;
 
@@ -2135,7 +2140,7 @@ const CloudSync = {
       try { this.mqttClient.end(); } catch (e) {}
     }
 
-    const roomCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : 'giasu-hub';
+    const roomCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : DEFAULT_SYNC_ROOM;
     const topic = `tutorhub/sync/${roomCode}`;
     const clientId = 'th_' + this.deviceId;
 
@@ -2153,6 +2158,22 @@ const CloudSync = {
         this.mqttClient.subscribe(topic, { qos: 1 }, (err) => {
           if (err) console.error('Subscription error:', err);
         });
+
+        // If tutor mode (not parent portal), immediately push current state with retain flag so cloud always holds latest
+        if (!isParentPortalMode() && AppState.sessions && AppState.sessions.length > 0) {
+          const now = Date.now();
+          this.lastSyncTimestamp = now;
+          const data = AppState.exportAllData();
+          const isMob = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+          const msg = {
+            type: 'SYNC_UPDATE',
+            deviceId: this.deviceId,
+            deviceName: isMob ? 'Điện thoại' : 'Máy tính',
+            timestamp: now,
+            data: data
+          };
+          this.mqttClient.publish(topic, JSON.stringify(msg), { qos: 1, retain: true });
+        }
       });
 
       this.mqttClient.on('message', (receivedTopic, messageBuffer) => {
@@ -2161,11 +2182,16 @@ const CloudSync = {
           if (payload.deviceId === this.deviceId) return; // Ignore own message
 
           if (payload.type === 'SYNC_UPDATE' && payload.timestamp) {
-            if (payload.timestamp > this.lastSyncTimestamp) {
+            if (payload.timestamp > this.lastSyncTimestamp || isParentPortalMode()) {
               this.lastSyncTimestamp = payload.timestamp;
               AppState.importAllData(payload.data, true);
-              const devName = payload.deviceName || 'thiết bị khác';
-              showToast(`⚡ Đã đồng bộ dữ liệu mới nhất từ ${devName}!`, 'info');
+              if (isParentPortalMode()) {
+                renderParentPortal(currentParentClassId);
+                showToast('⚡ Giáo viên vừa cập nhật thông tin học tập & học phí!', 'info');
+              } else {
+                const devName = payload.deviceName || 'thiết bị khác';
+                showToast(`⚡ Đã đồng bộ dữ liệu mới nhất từ ${devName}!`, 'info');
+              }
             }
           }
         } catch (err) {
@@ -2211,11 +2237,11 @@ const CloudSync = {
         data: data
       };
 
-      // 1. Send via MQTT WebSocket
+      // 1. Send via MQTT WebSocket with RETAIN: true
       if (this.mqttClient && this.mqttClient.connected) {
-        const roomCode = AppState.settings.syncCode || 'giasu-hub';
+        const roomCode = AppState.settings.syncCode || DEFAULT_SYNC_ROOM;
         const topic = `tutorhub/sync/${roomCode}`;
-        this.mqttClient.publish(topic, JSON.stringify(msg), { qos: 1 });
+        this.mqttClient.publish(topic, JSON.stringify(msg), { qos: 1, retain: true });
         this.updateStatus('live');
       }
 
@@ -2626,9 +2652,10 @@ function updateShareModalContent(classId) {
   const [yearStr, monthStr] = AppState.currentMonth.split('-');
   const monthInt = parseInt(monthStr, 10);
 
-  // Generate URL
-  const baseUrl = window.location.href.split('?')[0];
-  const syncCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : 'giasu-hub';
+  // Generate URL - Always use online production link so parents can open immediately on mobile
+  const isPublicWeb = window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.startsWith('192.168.') && !window.location.hostname.startsWith('127.0.0.');
+  const baseUrl = isPublicWeb ? window.location.href.split('?')[0] : ONLINE_PRODUCTION_URL;
+  const syncCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : DEFAULT_SYNC_ROOM;
   const parentUrl = `${baseUrl}?view=parent&class=${cl.id}&code=${syncCode}`;
 
   const linkInput = document.getElementById('share-parent-link-input');
@@ -2674,12 +2701,13 @@ function updateShareModalContent(classId) {
 function openCloudSyncModal() {
   const modal = document.getElementById('modal-cloud-sync');
   if (!modal) return;
-  const syncCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : 'giasu-hub';
+  const isPublicWeb = window.location.protocol.startsWith('http') && !window.location.hostname.includes('localhost') && !window.location.hostname.startsWith('192.168.') && !window.location.hostname.startsWith('127.0.0.');
+  const baseUrl = isPublicWeb ? window.location.href.split('?')[0] : ONLINE_PRODUCTION_URL;
+  const syncCode = (AppState.settings && AppState.settings.syncCode) ? AppState.settings.syncCode : DEFAULT_SYNC_ROOM;
   const input = document.getElementById('modal-sync-code-input');
   if (input) input.value = syncCode;
 
   // Render QR
-  const baseUrl = window.location.href.split('?')[0];
   const pairingUrl = `${baseUrl}?sync=${syncCode}`;
   const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(pairingUrl)}`;
   const container = document.getElementById('modal-pairing-qr');
