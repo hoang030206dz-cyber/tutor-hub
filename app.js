@@ -21,7 +21,200 @@ function generateDefaultSessions() {
 
 // Generate realistic default Exam & Resource bank for 4 classes
 function generateDefaultExams() {
-  return [{"id":"exam-1793847151367","classId":"class-1","category":"Đề thi thử","title":"20 BÀI TẬP CHƯƠNG 3 SỐ NGUYÊN","difficulty":"Khá","durationMinutes":"90","year":"","examUrl":"https://drive.google.com/file/d/1jKphXRIA1RE0tPg4MNDKFxlbXEC3QHPh/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1SPKks8liaIyvYPAmq7n1VNSPKGhSjnjc/view?usp=drive_link","notes":"","tags":["Đề thi thử","Khá"]},{"id":"exam-1793847059746","classId":"class-1","category":"Đề thi học kỳ","title":"KHO ĐỀ THI CK1","difficulty":"Khá","durationMinutes":"90","year":"26-27","examUrl":"https://drive.google.com/drive/folders/198zMhMPdPQV_3Aop0oVnOsmytrZmHhAv?usp=drive_link","solutionUrl":"","notes":"","tags":["Đề thi học kỳ","Khá"]},{"id":"exam-1793846995602","classId":"class-1","category":"Đề thi thử","title":"BÀI TẬP CHƯƠNG 9","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1leBWP1aBE29u-HPBRYxlFFC0MbQ6OAZe/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1Li6bb5s7MMe22iBkAMdZ08CWSx9vB3wT/view?usp=drive_link","notes":"","tags":["Đề thi thử","Cơ bản"]},{"id":"exam-1793846957908","classId":"class-1","category":"Đề thi thử","title":"CHƯƠNG 9","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/1InNpJGyIyl7RgfHOkAc5gH50KC8vKFlH/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Đề thi thử","Cơ bản"]},{"id":"exam-1793846932379","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 8","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1iuSBNpgU8mBc5RMuoFuTa7q5IQ_SHuvM/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1AIiptSwF3_nxCHHg3CuXDTsLH14yhYCK/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Cơ bản"]},{"id":"exam-1793846886710","classId":"class-1","category":"Tài liệu công thức","title":"CHƯƠNG 8","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/17bm1gH5lh-837MxZ0K93Muagbnx0yhUh/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793846852440","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 6+7","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1-RCOTr5E4mVGVUYDCZksHYw-NS5KPz1_/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1jSXheX1SbJK690OdJKpBFlpwNsf3a9lR/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Cơ bản"]},{"id":"exam-1793846819836","classId":"class-1","category":"Tài liệu công thức","title":"CHƯƠNG 6+7","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/1-l0yQeiyvqEykNPaaIjlNqe8M1VmixCA/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793846701130","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 4+5","difficulty":"Khá","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1X9Ysp3wdvyysTTyZPpVcP3WDspVjZQqo/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1RSYB7NI_EwoT6ATM89Deve4hgPeVVy-7/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Khá"]},{"id":"exam-1793801210580","classId":"class-1","category":"Tài liệu công thức","title":"Chương 4+5: Hình Học Trực Quan","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1NOFZUBsKpxMdqZbOChWYsuHrkp5VKmnj/view?usp=drive_link","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793799158371","classId":"class-3","category":"Tài liệu công thức","title":"Chương 2: Số Nguyên","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1EAGnAbGqnw_avzRkck0dVWmH4ARDyNbL/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1v346_GmcZYz78xr3_4nMorTmbXFMQZih/view?usp=drive_link","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-103","classId":"class-1","title":"Ôn GK1","category":"Chuyên đề ôn tập","difficulty":"Khá","durationMinutes":"90 phút","year":"2026","examUrl":"https://drive.google.com/file/d/1FgOIPSTQ1n0sMXEG1-AKnVaFRVIZzAhz/view?usp=drive_link","solutionUrl":"","notes":"","tags":["Giữa Kỳ 1","Toán 12"]}];
+  return [
+    {
+        "id":  "exam-1793847151367",
+        "classId":  "all",
+        "category":  "Đề thi thử",
+        "title":  "20 BÀI TẬP CHƯƠNG 3 SỐ NGUYÊN",
+        "difficulty":  "Khá",
+        "durationMinutes":  "90",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1jKphXRIA1RE0tPg4MNDKFxlbXEC3QHPh/view?usp=drive_link",
+        "solutionUrl":  "https://drive.google.com/file/d/1SPKks8liaIyvYPAmq7n1VNSPKGhSjnjc/view?usp=drive_link",
+        "notes":  "",
+        "tags":  [
+                     "Đề thi thử",
+                     "Khá"
+                 ]
+    },
+    {
+        "id":  "exam-1793847059746",
+        "classId":  "all",
+        "category":  "Đề thi học kỳ",
+        "title":  "KHO ĐỀ THI CK1",
+        "difficulty":  "Khá",
+        "durationMinutes":  "90",
+        "year":  "26-27",
+        "examUrl":  "https://drive.google.com/drive/folders/198zMhMPdPQV_3Aop0oVnOsmytrZmHhAv?usp=drive_link",
+        "solutionUrl":  "",
+        "notes":  "",
+        "tags":  [
+                     "Đề thi học kỳ",
+                     "Khá"
+                 ]
+    },
+    {
+        "id":  "exam-1793846995602",
+        "classId":  "all",
+        "category":  "Đề thi thử",
+        "title":  "BÀI TẬP CHƯƠNG 9",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1leBWP1aBE29u-HPBRYxlFFC0MbQ6OAZe/view?usp=drive_link",
+        "solutionUrl":  "https://drive.google.com/file/d/1Li6bb5s7MMe22iBkAMdZ08CWSx9vB3wT/view?usp=drive_link",
+        "notes":  "",
+        "tags":  [
+                     "Đề thi thử",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793846957908",
+        "classId":  "all",
+        "category":  "Đề thi thử",
+        "title":  "CHƯƠNG 9",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://docs.google.com/document/d/1InNpJGyIyl7RgfHOkAc5gH50KC8vKFlH/edit?usp=drive_link\u0026ouid=102173829098993468380\u0026rtpof=true\u0026sd=true",
+        "solutionUrl":  "",
+        "notes":  "",
+        "tags":  [
+                     "Đề thi thử",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793846932379",
+        "classId":  "all",
+        "category":  "Chuyên đề ôn tập",
+        "title":  "20 BÀI TẬP CHƯƠNG 8",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1iuSBNpgU8mBc5RMuoFuTa7q5IQ_SHuvM/view?usp=drive_link",
+        "solutionUrl":  "https://drive.google.com/file/d/1AIiptSwF3_nxCHHg3CuXDTsLH14yhYCK/view?usp=drive_link",
+        "notes":  "",
+        "tags":  [
+                     "Chuyên đề ôn tập",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793846886710",
+        "classId":  "all",
+        "category":  "Tài liệu công thức",
+        "title":  "CHƯƠNG 8",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://docs.google.com/document/d/17bm1gH5lh-837MxZ0K93Muagbnx0yhUh/edit?usp=drive_link\u0026ouid=102173829098993468380\u0026rtpof=true\u0026sd=true",
+        "solutionUrl":  "",
+        "notes":  "",
+        "tags":  [
+                     "Tài liệu công thức",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793846852440",
+        "classId":  "all",
+        "category":  "Chuyên đề ôn tập",
+        "title":  "20 BÀI TẬP CHƯƠNG 6+7",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1-RCOTr5E4mVGVUYDCZksHYw-NS5KPz1_/view?usp=drive_link",
+        "solutionUrl":  "https://drive.google.com/file/d/1jSXheX1SbJK690OdJKpBFlpwNsf3a9lR/view?usp=drive_link",
+        "notes":  "",
+        "tags":  [
+                     "Chuyên đề ôn tập",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793846819836",
+        "classId":  "all",
+        "category":  "Tài liệu công thức",
+        "title":  "CHƯƠNG 6+7",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://docs.google.com/document/d/1-l0yQeiyvqEykNPaaIjlNqe8M1VmixCA/edit?usp=drive_link\u0026ouid=102173829098993468380\u0026rtpof=true\u0026sd=true",
+        "solutionUrl":  "",
+        "notes":  "",
+        "tags":  [
+                     "Tài liệu công thức",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793846701130",
+        "classId":  "all",
+        "category":  "Chuyên đề ôn tập",
+        "title":  "20 BÀI TẬP CHƯƠNG 4+5",
+        "difficulty":  "Khá",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1X9Ysp3wdvyysTTyZPpVcP3WDspVjZQqo/view?usp=drive_link",
+        "solutionUrl":  "https://drive.google.com/file/d/1RSYB7NI_EwoT6ATM89Deve4hgPeVVy-7/view?usp=drive_link",
+        "notes":  "",
+        "tags":  [
+                     "Chuyên đề ôn tập",
+                     "Khá"
+                 ]
+    },
+    {
+        "id":  "exam-1793801210580",
+        "classId":  "all",
+        "category":  "Tài liệu công thức",
+        "title":  "Chương 4+5: Hình Học Trực Quan",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1NOFZUBsKpxMdqZbOChWYsuHrkp5VKmnj/view?usp=drive_link",
+        "solutionUrl":  "",
+        "notes":  "",
+        "tags":  [
+                     "Tài liệu công thức",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-1793799158371",
+        "classId":  "all",
+        "category":  "Tài liệu công thức",
+        "title":  "Chương 2: Số Nguyên",
+        "difficulty":  "Cơ bản",
+        "durationMinutes":  "",
+        "year":  "",
+        "examUrl":  "https://drive.google.com/file/d/1EAGnAbGqnw_avzRkck0dVWmH4ARDyNbL/view?usp=drive_link",
+        "solutionUrl":  "https://drive.google.com/file/d/1v346_GmcZYz78xr3_4nMorTmbXFMQZih/view?usp=drive_link",
+        "notes":  "",
+        "tags":  [
+                     "Tài liệu công thức",
+                     "Cơ bản"
+                 ]
+    },
+    {
+        "id":  "exam-103",
+        "classId":  "all",
+        "title":  "Ôn GK1",
+        "category":  "Chuyên đề ôn tập",
+        "difficulty":  "Khá",
+        "durationMinutes":  "90 phút",
+        "year":  "2026",
+        "examUrl":  "https://drive.google.com/file/d/1FgOIPSTQ1n0sMXEG1-AKnVaFRVIZzAhz/view?usp=drive_link",
+        "solutionUrl":  "",
+        "notes":  "",
+        "tags":  [
+                     "Giữa Kỳ 1",
+                     "Toán 12"
+                 ]
+    }
+];
 }
 
 // --- DEFAULT SETTINGS & VIETQR CONFIGURATION ---
@@ -78,6 +271,18 @@ const AppState = {
       // Ensure consistent syncCode across all devices
       if (!this.settings.syncCode || (this.settings.syncCode.startsWith('giasu-') && this.settings.syncCode.length <= 15 && this.settings.syncCode !== DEFAULT_SYNC_ROOM)) {
         this.settings.syncCode = DEFAULT_SYNC_ROOM;
+      }
+
+      // Ensure all exams are marked as shared ('all') so all classes can access them
+      if (this.exams && this.exams.length > 0) {
+        let examsUpdated = false;
+        this.exams.forEach(ex => {
+          if (!ex.classId || ex.classId !== 'all') {
+            ex.classId = 'all';
+            examsUpdated = true;
+          }
+        });
+        if (examsUpdated) this.saveToStorage();
       }
 
       // Save state if newly initialized or healed
@@ -186,8 +391,8 @@ const AppState = {
   // Filtered exams for current class
   getCurrentFilteredExams() {
     return this.exams.filter(exam => {
-      // Class filter
-      if (this.currentClassId !== 'all' && exam.classId !== this.currentClassId) return false;
+      // Class filter: Always show if exam is shared ('all' or not set), or matches current class, or viewing all classes
+      if (this.currentClassId !== 'all' && exam.classId && exam.classId !== 'all' && exam.classId !== this.currentClassId) return false;
 
       // Category filter
       if (this.examCategoryFilter !== 'all' && exam.category !== this.examCategoryFilter) return false;
@@ -684,7 +889,8 @@ function renderExams() {
 
   let html = '';
   exams.forEach(ex => {
-    const cl = AppState.getClassById(ex.classId) || { name: 'Chung' };
+    const isAll = !ex.classId || ex.classId === 'all';
+    const cl = isAll ? { name: '🌟 Dùng chung tất cả các lớp' } : (AppState.getClassById(ex.classId) || { name: 'Dùng chung' });
 
     let tagsHtml = '';
     if (ex.tags && ex.tags.length > 0) {
@@ -695,7 +901,7 @@ function renderExams() {
       <div class="bg-white dark:bg-[#111726] rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-xs space-y-3 card-hover flex flex-col justify-between">
         <div class="space-y-2">
           <div class="flex items-center justify-between gap-2">
-            <span class="text-xs font-bold text-slate-800 dark:text-slate-200 truncate">${cl.name}</span>
+            <span class="text-xs font-bold ${isAll ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 rounded-md border border-indigo-200 dark:border-indigo-800' : 'text-slate-800 dark:text-slate-200'} truncate">${cl.name}</span>
             <span class="text-[10px] font-medium px-2 py-0.5 rounded-md border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 shrink-0">${ex.difficulty || 'Khá'}</span>
           </div>
 
@@ -951,7 +1157,7 @@ function renderClassSettings() {
 
 // Populate class select dropdowns in all modals
 function populateClassSelects() {
-  const selects = ['session-class-select', 'exam-class-select', 'quick-class-select', 'report-class-select'];
+  const selects = ['session-class-select', 'quick-class-select', 'report-class-select'];
 
   selects.forEach(selectId => {
     const el = document.getElementById(selectId);
@@ -966,6 +1172,19 @@ function populateClassSelects() {
 
     el.innerHTML = options;
   });
+
+  // Dedicated for exam/resource dropdown: Shared for all classes is top choice!
+  const examSelect = document.getElementById('exam-class-select');
+  if (examSelect) {
+    const previousVal = examSelect.value;
+    const isAll = (!previousVal || previousVal === 'all');
+    let examOptions = `<option value="all" ${isAll ? 'selected' : ''}>🌟 Dùng chung cho tất cả các lớp</option>`;
+    AppState.classes.forEach(c => {
+      const selected = (!isAll && previousVal === c.id) ? 'selected' : '';
+      examOptions += `<option value="${c.id}" ${selected}>${c.name} (${c.student})</option>`;
+    });
+    examSelect.innerHTML = examOptions;
+  }
 }
 
 // Master Render All Components
@@ -1080,8 +1299,9 @@ function openAddExamModal() {
   document.getElementById('exam-id').value = '';
   document.getElementById('modal-exam-title').textContent = 'Thêm Đề Thi / Tài Liệu Mới';
 
-  if (AppState.currentClassId !== 'all') {
-    document.getElementById('exam-class-select').value = AppState.currentClassId;
+  const examSelect = document.getElementById('exam-class-select');
+  if (examSelect) {
+    examSelect.value = (AppState.currentClassId !== 'all') ? AppState.currentClassId : 'all';
   }
 
   modal.classList.remove('hidden');
@@ -1097,7 +1317,7 @@ function editExam(id) {
 
   document.getElementById('modal-exam-title').textContent = 'Chỉnh Sửa Đề Thi';
   document.getElementById('exam-id').value = ex.id;
-  document.getElementById('exam-class-select').value = ex.classId;
+  document.getElementById('exam-class-select').value = ex.classId || 'all';
   document.getElementById('exam-category-select').value = ex.category;
   document.getElementById('exam-name').value = ex.title;
   document.getElementById('exam-difficulty').value = ex.difficulty || 'Khá';
@@ -2232,32 +2452,74 @@ function renderParentPortal(classId) {
     }
   }
 
-  // Exams List for this class
+  // Exams & Study Documents for Parent
   const examListEl = document.getElementById('parent-exams-list');
+  const countTag = document.getElementById('parent-exams-count-tag');
   if (examListEl) {
-    const classExams = AppState.exams.filter(e => e.classId === cl.id || e.classId === 'all');
+    // Show exams for this specific class OR shared across all classes ('all' or empty)
+    const classExams = AppState.exams.filter(e => !e.classId || e.classId === 'all' || e.classId === cl.id);
+    if (countTag) countTag.textContent = `${classExams.length} tài liệu & đề thi`;
+
     if (classExams.length === 0) {
-      examListEl.innerHTML = `<div class="py-4 text-center text-slate-400 text-xs">Chưa có bài kiểm tra hoặc tài liệu nào được giao.</div>`;
+      examListEl.innerHTML = `
+        <div class="py-8 text-center text-slate-400 dark:text-slate-500 text-xs">
+          <i data-lucide="folder-x" class="w-8 h-8 mx-auto mb-2 opacity-40"></i>
+          <div>Chưa có tài liệu hoặc đề thi nào được chia sẻ.</div>
+        </div>
+      `;
     } else {
       let examHtml = '';
       classExams.forEach(e => {
+        const isExam = (e.category && (e.category.includes('Đề thi') || e.category.includes('Kiểm tra')));
+        const iconName = isExam ? 'file-text' : 'book-open';
+        const iconBg = isExam ? 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400' : 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400';
+
+        let tagsHtml = '';
+        if (e.tags && e.tags.length > 0) {
+          tagsHtml = e.tags.map(t => `<span class="px-2 py-0.5 rounded-md text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-slate-700/60">#${t}</span>`).join(' ');
+        }
+
+        const openDocUrl = e.examUrl || e.driveUrl || '';
+        const solutionDocUrl = e.solutionUrl || '';
+
         examHtml += `
-          <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <span class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-xs">
-                ${e.category === 'exam' ? 'ĐỀ' : 'TL'}
-              </span>
-              <div>
-                <h4 class="text-xs font-bold text-slate-900 dark:text-white">${e.title}</h4>
-                <p class="text-[11px] text-slate-500">${e.description || 'Tài liệu ôn luyện nâng cao'}</p>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="flex items-start gap-3">
+                <span class="w-9 h-9 rounded-xl ${iconBg} flex items-center justify-center font-bold shrink-0 mt-0.5">
+                  <i data-lucide="${iconName}" class="w-4 h-4"></i>
+                </span>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-white leading-snug">${e.title}</h4>
+                  <div class="flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    <span class="font-medium bg-white dark:bg-slate-800 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700">${e.category || 'Tài liệu'}</span>
+                    ${e.difficulty ? `<span class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 text-[11px] font-semibold">${e.difficulty}</span>` : ''}
+                    ${e.durationMinutes ? `<span>⏱ ${e.durationMinutes}</span>` : ''}
+                    <span class="text-indigo-600 dark:text-indigo-400 font-medium">🌟 Dùng chung</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action buttons for parent/student -->
+              <div class="flex flex-wrap items-center gap-2 shrink-0 pt-2 sm:pt-0">
+                ${openDocUrl ? `
+                  <a href="${openDocUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-700 text-white shadow-xs transition-colors">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <span>Mở Xem Tài Liệu</span>
+                  </a>
+                ` : ''}
+                ${solutionDocUrl ? `
+                  <a href="${solutionDocUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-xs transition-colors">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                    <span>Xem Đáp Án</span>
+                  </a>
+                ` : ''}
               </div>
             </div>
-            ${e.driveUrl ? `
-              <a href="${e.driveUrl}" target="_blank" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-100 flex items-center gap-1">
-                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-                <span>Mở Xem</span>
-              </a>
-            ` : ''}
+
+            ${e.notes ? `<p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-white/60 dark:bg-slate-900/40 p-2.5 rounded-lg border border-slate-200/50 dark:border-slate-800">${e.notes}</p>` : ''}
+
+            ${tagsHtml ? `<div class="flex flex-wrap gap-1">${tagsHtml}</div>` : ''}
           </div>
         `;
       });

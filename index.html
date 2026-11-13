@@ -192,12 +192,18 @@
         </div>
       </div>
 
-      <!-- Exam & Test Records -->
+      <!-- Exam & Resource Bank for Parent -->
       <div class="bg-white dark:bg-[#111726] rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 shadow-xs space-y-4">
-        <div class="flex items-center gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
-          <i data-lucide="award" class="w-5 h-5 text-amber-500"></i>
-          <h2 class="text-base font-bold text-slate-900 dark:text-white">Bảng Điểm Kiểm Tra Định Kỳ & Đề Thi</h2>
+        <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+          <div class="flex items-center gap-2">
+            <i data-lucide="book-open" class="w-5 h-5 text-indigo-500"></i>
+            <h2 class="text-base font-bold text-slate-900 dark:text-white">Kho Tài Liệu Học Tập & Đề Thi Dành Cho Học Sinh</h2>
+          </div>
+          <span class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold" id="parent-exams-count-tag">0 tài liệu</span>
         </div>
+        <p class="text-xs text-slate-500 dark:text-slate-400">
+          Phụ huynh và học sinh có thể bấm trực tiếp để mở xem hoặc tải về đề cương, bài tập và tài liệu học tập của giáo viên.
+        </p>
         <div id="parent-exams-list" class="space-y-3">
           <!-- Populated by JS -->
         </div>
@@ -929,9 +935,9 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Thuộc Lớp Nào <span class="text-rose-500">*</span></label>
+            <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Áp Dụng Cho Lớp <span class="text-rose-500">*</span></label>
             <select id="exam-class-select" required class="w-full text-xs sm:text-sm py-2 px-3 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl">
-              <!-- Populated by JS -->
+              <option value="all">🌟 Dùng chung cho tất cả các lớp</option>
             </select>
           </div>
           <div>
