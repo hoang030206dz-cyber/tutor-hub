@@ -1,63 +1,10 @@
-/**
+﻿/**
  * TutorHub Pro - Quản Lý Gia Sư 4 Lớp Học Thông Minh
  * Senior UI/UX & Frontend Architecture
  */
 
 // --- INITIAL DEFAULT DATA (4 LỚP HỌC MẪU CHUYÊN SÂU) ---
-const DEFAULT_CLASSES = [
-  {
-    id: 'class-1',
-    name: 'Lớp 12A - Toán THPT Quốc Gia',
-    student: 'Nguyễn Hoàng Nam',
-    subject: 'Toán 12 Nâng Cao',
-    schedule: 'Thứ Ba, Thứ Sáu (19:30 - 21:00)',
-    feePerSession: 250000,
-    color: 'indigo',
-    colorHex: '#4f46e5',
-    parentName: 'Chị Mai',
-    phone: '0912.345.678',
-    target: 'Mục tiêu đạt 9.0+ kỳ thi THPT Quốc Gia môn Toán'
-  },
-  {
-    id: 'class-2',
-    name: 'Lớp 11B - Vật Lý VIP',
-    student: 'Trần Minh Quân & Lê Hải Đăng',
-    subject: 'Vật Lý 11 Chuyên Đề',
-    schedule: 'Thứ Tư, Chủ Nhật (17:30 - 19:00)',
-    feePerSession: 300000,
-    color: 'emerald',
-    colorHex: '#10b981',
-    parentName: 'Bác Thanh',
-    phone: '0988.765.432',
-    target: 'Nắm chắc kiến thức điện từ học, giải các bài toán sóng dao động'
-  },
-  {
-    id: 'class-3',
-    name: 'Lớp 10C - Hóa Học Nền Tảng',
-    student: 'Phạm Quỳnh Anh',
-    subject: 'Hóa Học 10',
-    schedule: 'Thứ Hai, Thứ Năm (19:00 - 20:30)',
-    feePerSession: 220000,
-    color: 'purple',
-    colorHex: '#a855f7',
-    parentName: 'Cô Hạnh',
-    phone: '0903.112.233',
-    target: 'Cân bằng phản ứng oxi hóa khử, nắm vững bảng tuần hoàn hóa học'
-  },
-  {
-    id: 'class-4',
-    name: 'Lớp 9D - Luyện Thi Vào 10',
-    student: 'Đỗ Tuấn Kiệt',
-    subject: 'Toán 9 Tuyển Sinh 10',
-    schedule: 'Thứ Bảy, Chủ Nhật (08:30 - 10:00)',
-    feePerSession: 250000,
-    color: 'amber',
-    colorHex: '#f59e0b',
-    parentName: 'Chị Lan',
-    phone: '0977.889.900',
-    target: 'Chắc 8.5+ Toán vào lớp 10, thành thạo Vi-ét và hình học đường tròn'
-  }
-];
+const DEFAULT_CLASSES = [{"id":"class-1","name":"Toán 6 - FLC HH4","student":"Khôi","subject":"Toán 6","schedule":"Thứ Ba (19:30 - 21:30)","feePerSession":180000,"color":"indigo","colorHex":"#4f46e5","parentName":"Chú Bộ","phone":"Vô Thường","target":""},{"id":"class-2","name":"Toán 11 - Tân Mai","student":"Minh","subject":"Toán","schedule":"Thứ 4+7 (17:00 - 19:00)","feePerSession":180000,"color":"emerald","colorHex":"#10b981","parentName":"Cô Lan","phone":"","target":""},{"id":"class-3","name":"Toán 6 - Sky Garden gần cầu vĩnh tuy","student":"Sơn","subject":"Toán 6","schedule":"Thứ Sáu (19:30- 21:30)","feePerSession":180000,"color":"purple","colorHex":"#a855f7","parentName":"chị Thuỷ","phone":"0982901016","target":""},{"id":"class-4","name":"Toán 6_ Lê Văn Lương","student":"","subject":"toán","schedule":"Thứ 5 (18:00-20:00)","feePerSession":180000,"color":"amber","colorHex":"#f59e0b","parentName":"Cô Quỳnh Anh","phone":"0979779790","target":""}];
 
 // Helper to get formatted current month string 'YYYY-MM'
 function getCurrentMonthString() {
@@ -69,321 +16,12 @@ function getCurrentMonthString() {
 
 // Generate realistic default sessions for current month
 function generateDefaultSessions() {
-  const currentMonth = getCurrentMonthString();
-  const [yearStr, monthStr] = currentMonth.split('-');
-  const y = parseInt(yearStr, 10);
-  const m = parseInt(monthStr, 10);
-
-  // Return a rich set of sessions around current month
-  return [
-    // Lớp 12A
-    {
-      id: 'sess-101',
-      classId: 'class-1',
-      date: `${y}-${String(m).padStart(2, '0')}-03`,
-      time: '19:30',
-      duration: 90,
-      topic: 'Cực trị hàm số chứa tham số m nâng cao',
-      details: '- Ôn lại điều kiện cực đại cực tiểu bằng đạo hàm cấp 2\n- 4 dạng bài toán cực trị chứa tham số m\n- Hướng dẫn dùng Casio bấm kiểm tra nhanh',
-      homeworkTitle: 'Phiếu bài tập số 04: 15 câu cực trị hàm bậc 3 và bậc 4 trùng phương',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-06`,
-      homeworkStatus: 'graded',
-      homeworkScore: '9.0/10',
-      rating: 5,
-      notes: 'Nam tiếp thu rất nhanh, phương pháp giải mạch lạc, cần cẩn thận phần xét dấu delta.',
-      status: 'completed',
-      fee: 250000
-    },
-    {
-      id: 'sess-102',
-      classId: 'class-1',
-      date: `${y}-${String(m).padStart(2, '0')}-06`,
-      time: '19:30',
-      duration: 90,
-      topic: 'Tiệm cận đứng, tiệm cận ngang và đồ thị hàm phân thức',
-      details: '- Phân tích tiệm cận đồ thị hàm số chứa căn thức và phân thức\n- Sửa chi tiết 5 câu khó trong BTVN số 04',
-      homeworkTitle: 'Làm 10 câu tìm tiệm cận trong đề thi thử Chuyên Sư Phạm 2026',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-10`,
-      homeworkStatus: 'submitted',
-      homeworkScore: '',
-      rating: 4,
-      notes: 'Làm tốt bài tiệm cận, cần chú ý điều kiện tập xác định khi rút gọn.',
-      status: 'completed',
-      fee: 250000
-    },
-    {
-      id: 'sess-103',
-      classId: 'class-1',
-      date: `${y}-${String(m).padStart(2, '0')}-10`,
-      time: '19:30',
-      duration: 90,
-      topic: 'Phương pháp tọa độ hóa hình không gian Oxyz (Phần 1)',
-      details: '- Gắn trục tọa độ Oxyz vào hình chóp đáy tam giác vuông và hình lập phương\n- Tính góc và khoảng cách giữa hai đường thẳng chéo nhau',
-      homeworkTitle: '5 bài toán khoảng cách điểm đến mặt phẳng bằng tọa độ Oxyz',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-13`,
-      homeworkStatus: 'pending',
-      homeworkScore: '',
-      rating: 4,
-      notes: 'Gắn trục rất chuẩn, tốc độ tính tích có hướng hai vecto cần rèn thêm.',
-      status: 'completed',
-      fee: 250000
-    },
-    {
-      id: 'sess-104',
-      classId: 'class-1',
-      date: `${y}-${String(m).padStart(2, '0')}-13`,
-      time: '19:30',
-      duration: 90,
-      topic: 'Luyện Đề Thi Thử THPT QG Số 01',
-      details: '- Bấm giờ làm 50 câu trắc nghiệm trong 90 phút\n- Nhận xét lỗi sai phổ biến câu 35 - 45',
-      homeworkTitle: 'Sửa lại các câu sai vào vở và làm lại 5 câu hình không gian',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-17`,
-      homeworkStatus: 'pending',
-      homeworkScore: '',
-      rating: 5,
-      notes: 'Điểm thi thử đạt 8.8/10. Tiến bộ rõ rệt ở phần hàm số!',
-      status: 'completed',
-      fee: 250000
-    },
-
-    // Lớp 11B
-    {
-      id: 'sess-201',
-      classId: 'class-2',
-      date: `${y}-${String(m).padStart(2, '0')}-04`,
-      time: '17:30',
-      duration: 90,
-      topic: 'Định luật Cu-lông & Cường độ điện trường tổng hợp',
-      details: '- Nguyên lý chồng chất điện trường\n- Bài toán con lắc đơn dao động trong điện trường đều',
-      homeworkTitle: 'Bài tập 1 đến 8 sách bài tập nâng cao phần điện trường',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-08`,
-      homeworkStatus: 'graded',
-      homeworkScore: '8.5/10',
-      rating: 4,
-      notes: 'Hai bạn Quân và Đăng học tập hào hứng, Quân giải nhanh phần đại số, Đăng vẽ hình tốt.',
-      status: 'completed',
-      fee: 300000
-    },
-    {
-      id: 'sess-202',
-      classId: 'class-2',
-      date: `${y}-${String(m).padStart(2, '0')}-08`,
-      time: '17:30',
-      duration: 90,
-      topic: 'Công của lực điện & Hiệu điện thế giữa hai điểm',
-      details: '- Công thức liên hệ A = qEd = qU\n- Chuyển động của hạt mang điện bay vào điện trường đều',
-      homeworkTitle: 'Phiếu chuyên đề: Quỹ đạo electron trong điện trường tụ điện phẳng',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-11`,
-      homeworkStatus: 'submitted',
-      homeworkScore: '',
-      rating: 4,
-      notes: 'Hai bạn hiểu rõ bản chất vật lý của công không phụ thuộc hình dạng đường đi.',
-      status: 'completed',
-      fee: 300000
-    },
-
-    // Lớp 10C
-    {
-      id: 'sess-301',
-      classId: 'class-3',
-      date: `${y}-${String(m).padStart(2, '0')}-02`,
-      time: '19:00',
-      duration: 90,
-      topic: 'Cấu hình electron nguyên tử & Quy tắc Hund',
-      details: '- Quy tắc Klechkowski và phân bố e vào các obitan nguyên tử\n- Xác định vị trí nguyên tố trong bảng tuần hoàn (chu kỳ, nhóm)',
-      homeworkTitle: 'Viết cấu hình electron và xác định tính chất của 20 nguyên tố đầu',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-05`,
-      homeworkStatus: 'graded',
-      homeworkScore: '9.5/10',
-      rating: 5,
-      notes: 'Quỳnh Anh rất chăm chỉ, trình bày vở sạch đẹp, nhớ chính xác các trường hợp đặc biệt của Cu và Cr.',
-      status: 'completed',
-      fee: 220000
-    },
-    {
-      id: 'sess-302',
-      classId: 'class-3',
-      date: `${y}-${String(m).padStart(2, '0')}-05`,
-      time: '19:00',
-      duration: 90,
-      topic: 'Liên kết ion và sự tạo thành tinh thể muối NaCl',
-      details: '- Sự hình thành cation và anion\n- Đặc điểm cấu trúc và tính chất vật lý của hợp chất ion',
-      homeworkTitle: 'Làm phiếu trắc nghiệm 20 câu liên kết hóa học',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-09`,
-      homeworkStatus: 'pending',
-      homeworkScore: '',
-      rating: 4,
-      notes: 'Nắm vững lý thuyết ion, cần củng cố thêm về độ âm điện.',
-      status: 'completed',
-      fee: 220000
-    },
-
-    // Lớp 9D
-    {
-      id: 'sess-401',
-      classId: 'class-4',
-      date: `${y}-${String(m).padStart(2, '0')}-01`,
-      time: '08:30',
-      duration: 90,
-      topic: 'Rút gọn biểu thức chứa căn bậc hai & Tìm x để P nhận giá trị nguyên',
-      details: '- Kỹ thuật quy đồng mẫu số chung chuẩn xác\n- Dạng toán tìm x nguyên để P nguyên (chặn miền giá trị)',
-      homeworkTitle: '6 câu rút gọn trong các đề thi vào 10 Hà Nội & TP.HCM các năm trước',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-07`,
-      homeworkStatus: 'graded',
-      homeworkScore: '8.0/10',
-      rating: 4,
-      notes: 'Kiệt giải tốt các bước quy đồng, bị trừ 0.25đ do quên kết hợp điều kiện xác định ở câu cuối.',
-      status: 'completed',
-      fee: 250000
-    },
-    {
-      id: 'sess-402',
-      classId: 'class-4',
-      date: `${y}-${String(m).padStart(2, '0')}-07`,
-      time: '08:30',
-      duration: 90,
-      topic: 'Định lý Vi-ét và các bài toán tương giao Parabol - Đường thẳng',
-      details: '- Lập phương trình hoành độ giao điểm\n- Biến đổi hệ thức đối xứng theo tổng S và tích P',
-      homeworkTitle: 'Hoàn thành 4 bài tập tương giao parabol và hệ thức Vi-ét',
-      homeworkDeadline: `${y}-${String(m).padStart(2, '0')}-14`,
-      homeworkStatus: 'pending',
-      homeworkScore: '',
-      rating: 4,
-      notes: 'Biết cách áp dụng hằng đẳng thức để tạo S^2 - 2P, cần tính nhẩm nhanh hơn.',
-      status: 'completed',
-      fee: 250000
-    }
-  ];
+  return [{"id":"sess-1794561464385","classId":"class-4","status":"completed","date":"2026-11-12","time":"18:00","duration":120,"topic":"test kiến thức","details":"các dạng bài cơ bản số tự nhiên và hình học\nso sánh, cộng trừ nhân chia số nguyên","homeworkTitle":"bài tập khoanh bút đỏ trong phiếu","homeworkDeadline":"2026-11-18","homeworkStatus":"pending","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1794362999275","classId":"class-1","status":"completed","date":"2026-11-10","time":"19:30","duration":135,"topic":"ƯCLN, BCNN","details":"","homeworkTitle":"bà tập khoanh trong đề cương","homeworkDeadline":"","homeworkStatus":"pending","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1794277472570","classId":"class-3","status":"completed","date":"2026-11-09","time":"19:30","duration":135,"topic":"số nguyên","details":"","homeworkTitle":"","homeworkDeadline":"","homeworkStatus":"none","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1793797856655","classId":"class-1","status":"completed","date":"2026-11-03","time":"19:30","duration":120,"topic":"Ôn thì giữa học kì 1","details":"","homeworkTitle":"","homeworkDeadline":"","homeworkStatus":"none","homeworkScore":"","rating":3,"notes":"","fee":180000}];
 }
 
 // Generate realistic default Exam & Resource bank for 4 classes
 function generateDefaultExams() {
-  return [
-    // Lớp 12A
-    {
-      id: 'exam-101',
-      classId: 'class-1',
-      title: 'Đề Thi Thử THPT QG Môn Toán 2026 - Đề Số 01 (Kèm Đáp Án & Bareme)',
-      category: 'Đề thi thử',
-      difficulty: 'Vận dụng cao',
-      durationMinutes: '90 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-toan12-de01/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-toan12-dapan01/view',
-      notes: 'Đề gồm 50 câu chuẩn cấu trúc Bộ GD&ĐT, bao gồm 10 câu phân hóa 8.5+ cực trị hàm hợp và hình Oxyz.',
-      tags: ['Toán 12', 'Thi Thử THPT', 'Chuyên Đề 8+']
-    },
-    {
-      id: 'exam-102',
-      classId: 'class-1',
-      title: 'Chuyên Đề 50 Câu Min - Max & Cực Trị Hàm Số Chứa Giá Trị Tuyệt Đối',
-      category: 'Chuyên đề ôn tập',
-      difficulty: 'Vận dụng cao',
-      durationMinutes: '120 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-toan12-chuyende-cuc-tri/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-toan12-cuc-tri-giaichitiet/view',
-      notes: 'Tổng hợp các kỹ thuật giải nhanh: ghép trục, tịnh tiến đồ thị và đạo hàm từng khoảng.',
-      tags: ['Hàm Số', 'Cực Trị', 'Ghép Trục']
-    },
-    {
-      id: 'exam-103',
-      classId: 'class-1',
-      title: 'Đề Khảo Sát Chất Lượng Giữa Học Kỳ 1 - Tuyển Chọn Trường Chuyên',
-      category: 'Đề thi học kỳ',
-      difficulty: 'Khá',
-      durationMinutes: '90 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-toan12-giuaky1/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-toan12-giuaky1-dapan/view',
-      notes: 'Ôn tập toàn bộ phần Đạo hàm ứng dụng và Khối đa diện thể tích.',
-      tags: ['Giữa Kỳ 1', 'Toán 12']
-    },
-
-    // Lớp 11B
-    {
-      id: 'exam-201',
-      classId: 'class-2',
-      title: 'Đề Kiểm Tra 1 Tiết Chương Điện Tích - Điện Trường (45 Phút Chuẩn)',
-      category: 'Kiểm tra 15p/1 tiết',
-      difficulty: 'Khá',
-      durationMinutes: '45 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-vatly11-dientruong/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-vatly11-dientruong-dapan/view',
-      notes: 'Gồm 28 câu trắc nghiệm và 2 bài tự luận tính điện tích và lực điện tổng hợp.',
-      tags: ['Vật Lý 11', 'Điện Tích', 'Điện Trường']
-    },
-    {
-      id: 'exam-202',
-      classId: 'class-2',
-      title: 'Tuyển Tập Bài Toán Dao Động Cơ & Sóng Cơ Học Điểm 9+',
-      category: 'Chuyên đề ôn tập',
-      difficulty: 'Vận dụng cao',
-      durationMinutes: '90 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-vatly11-songco/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-vatly11-songco-giai/view',
-      notes: 'Phương pháp giải nhanh bằng vòng tròn lượng giác đa trục và đồ thị sóng dừng.',
-      tags: ['Vật Lý 11', 'Sóng Cơ', 'Vòng Tròn Lượng Giác']
-    },
-
-    // Lớp 10C
-    {
-      id: 'exam-301',
-      classId: 'class-3',
-      title: 'Đề Kiểm Tra 45 Phút Cấu Tạo Nguyên Tử & Bảng Tuần Hoàn Các Nguyên Tố',
-      category: 'Kiểm tra 15p/1 tiết',
-      difficulty: 'Cơ bản',
-      durationMinutes: '45 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-hoahoc10-nguyentu/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-hoahoc10-nguyentu-dapan/view',
-      notes: 'Phù hợp kiểm tra lấy điểm số 1, củng cố viết cấu hình electron và quy luật biến đổi tuần hoàn.',
-      tags: ['Hóa Học 10', 'Nguyên Tử', 'Bảng Tuần Hoàn']
-    },
-    {
-      id: 'exam-302',
-      classId: 'class-3',
-      title: 'Sổ Tay Tóm Tắt Toàn Bộ Công Thức & Phản Ứng Hóa 10 Chương Trình Mới',
-      category: 'Tài liệu công thức',
-      difficulty: 'Cơ bản',
-      durationMinutes: 'Tra cứu',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-hoahoc10-sotay-congthuc/view',
-      solutionUrl: '',
-      notes: 'Bảng tra cứu độ âm điện, bán kính nguyên tử, năng lượng ion hóa và phương pháp thăng bằng e.',
-      tags: ['Hóa 10', 'Sổ Tay', 'Tra Cứu']
-    },
-
-    // Lớp 9D
-    {
-      id: 'exam-401',
-      classId: 'class-4',
-      title: 'Bộ 10 Đề Thi Thử Vào Lớp 10 Môn Toán (Tuyển Chọn Từ Đề Thi Các Tỉnh)',
-      category: 'Đề thi thử',
-      difficulty: 'Khá',
-      durationMinutes: '120 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-toan9-tuyensinh10/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-toan9-tuyensinh10-dapan/view',
-      notes: 'Bao quát cấu trúc 5 bài thi: Rút gọn, Giải bài toán bằng cách lập PT, Hệ PT, Hình học đường tròn và Bất đẳng thức Min Max.',
-      tags: ['Toán 9', 'Thi Vào 10', 'Tuyển Sinh']
-    },
-    {
-      id: 'exam-402',
-      classId: 'class-4',
-      title: 'Chuyên Đề Chứng Minh Tứ Giác Nội Tiếp & Các Bài Toán Hình Học 9 Hay',
-      category: 'Chuyên đề ôn tập',
-      difficulty: 'Khá',
-      durationMinutes: '90 phút',
-      year: '2026',
-      examUrl: 'https://drive.google.com/file/d/sample-toan9-tugiacnoitiep/view',
-      solutionUrl: 'https://drive.google.com/file/d/sample-toan9-tugiacnoitiep-giai/view',
-      notes: '5 dấu hiệu nhận biết tứ giác nội tiếp và 20 bài hình mẫu có kèm hình vẽ chi tiết.',
-      tags: ['Hình Học 9', 'Tứ Giác Nội Tiếp']
-    }
-  ];
+  return [{"id":"exam-1793847151367","classId":"class-1","category":"Đề thi thử","title":"20 BÀI TẬP CHƯƠNG 3 SỐ NGUYÊN","difficulty":"Khá","durationMinutes":"90","year":"","examUrl":"https://drive.google.com/file/d/1jKphXRIA1RE0tPg4MNDKFxlbXEC3QHPh/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1SPKks8liaIyvYPAmq7n1VNSPKGhSjnjc/view?usp=drive_link","notes":"","tags":["Đề thi thử","Khá"]},{"id":"exam-1793847059746","classId":"class-1","category":"Đề thi học kỳ","title":"KHO ĐỀ THI CK1","difficulty":"Khá","durationMinutes":"90","year":"26-27","examUrl":"https://drive.google.com/drive/folders/198zMhMPdPQV_3Aop0oVnOsmytrZmHhAv?usp=drive_link","solutionUrl":"","notes":"","tags":["Đề thi học kỳ","Khá"]},{"id":"exam-1793846995602","classId":"class-1","category":"Đề thi thử","title":"BÀI TẬP CHƯƠNG 9","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1leBWP1aBE29u-HPBRYxlFFC0MbQ6OAZe/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1Li6bb5s7MMe22iBkAMdZ08CWSx9vB3wT/view?usp=drive_link","notes":"","tags":["Đề thi thử","Cơ bản"]},{"id":"exam-1793846957908","classId":"class-1","category":"Đề thi thử","title":"CHƯƠNG 9","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/1InNpJGyIyl7RgfHOkAc5gH50KC8vKFlH/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Đề thi thử","Cơ bản"]},{"id":"exam-1793846932379","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 8","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1iuSBNpgU8mBc5RMuoFuTa7q5IQ_SHuvM/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1AIiptSwF3_nxCHHg3CuXDTsLH14yhYCK/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Cơ bản"]},{"id":"exam-1793846886710","classId":"class-1","category":"Tài liệu công thức","title":"CHƯƠNG 8","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/17bm1gH5lh-837MxZ0K93Muagbnx0yhUh/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793846852440","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 6+7","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1-RCOTr5E4mVGVUYDCZksHYw-NS5KPz1_/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1jSXheX1SbJK690OdJKpBFlpwNsf3a9lR/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Cơ bản"]},{"id":"exam-1793846819836","classId":"class-1","category":"Tài liệu công thức","title":"CHƯƠNG 6+7","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/1-l0yQeiyvqEykNPaaIjlNqe8M1VmixCA/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793846701130","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 4+5","difficulty":"Khá","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1X9Ysp3wdvyysTTyZPpVcP3WDspVjZQqo/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1RSYB7NI_EwoT6ATM89Deve4hgPeVVy-7/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Khá"]},{"id":"exam-1793801210580","classId":"class-1","category":"Tài liệu công thức","title":"Chương 4+5: Hình Học Trực Quan","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1NOFZUBsKpxMdqZbOChWYsuHrkp5VKmnj/view?usp=drive_link","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793799158371","classId":"class-3","category":"Tài liệu công thức","title":"Chương 2: Số Nguyên","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1EAGnAbGqnw_avzRkck0dVWmH4ARDyNbL/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1v346_GmcZYz78xr3_4nMorTmbXFMQZih/view?usp=drive_link","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-103","classId":"class-1","title":"Ôn GK1","category":"Chuyên đề ôn tập","difficulty":"Khá","durationMinutes":"90 phút","year":"2026","examUrl":"https://drive.google.com/file/d/1FgOIPSTQ1n0sMXEG1-AKnVaFRVIZzAhz/view?usp=drive_link","solutionUrl":"","notes":"","tags":["Giữa Kỳ 1","Toán 12"]}];
 }
 
 // --- DEFAULT SETTINGS & VIETQR CONFIGURATION ---
@@ -428,10 +66,13 @@ const AppState = {
       const storedTheme = localStorage.getItem('tutortrack_theme');
       const storedSettings = localStorage.getItem('tutortrack_settings');
 
-      this.classes = storedClasses ? JSON.parse(storedClasses) : DEFAULT_CLASSES;
-      this.sessions = storedSessions ? JSON.parse(storedSessions) : generateDefaultSessions();
-      this.exams = storedExams ? JSON.parse(storedExams) : generateDefaultExams();
-      this.theme = storedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      // Auto-heal: If localStorage has dummy sample data ("Nguyễn Hoàng Nam" / "Lớp 12A"), restore user genuine data
+      const isDummyStorage = storedClasses && (storedClasses.includes('Nguyễn Hoàng Nam') || storedClasses.includes('Lớp 12A - Toán THPT'));
+
+      this.classes = (storedClasses && !isDummyStorage) ? JSON.parse(storedClasses) : DEFAULT_CLASSES;
+      this.sessions = (storedSessions && !isDummyStorage) ? JSON.parse(storedSessions) : generateDefaultSessions();
+      this.exams = (storedExams && !isDummyStorage) ? JSON.parse(storedExams) : generateDefaultExams();
+      this.theme = storedTheme || 'dark';
       this.settings = storedSettings ? { ...DEFAULT_SETTINGS, ...JSON.parse(storedSettings) } : { ...DEFAULT_SETTINGS };
 
       // Ensure consistent syncCode across all devices
@@ -439,15 +80,15 @@ const AppState = {
         this.settings.syncCode = DEFAULT_SYNC_ROOM;
       }
 
-      // Save initial state if not existed
-      if (!storedClasses) this.saveToStorage();
+      // Save state if newly initialized or healed
+      if (!storedClasses || isDummyStorage) this.saveToStorage();
     } catch (e) {
       console.error('Error loading state from localStorage:', e);
       this.classes = DEFAULT_CLASSES;
       this.sessions = generateDefaultSessions();
       this.exams = generateDefaultExams();
       this.settings = { ...DEFAULT_SETTINGS };
-      this.theme = 'light';
+      this.theme = 'dark';
     }
   },
 
@@ -2182,12 +1823,21 @@ const CloudSync = {
           if (payload.deviceId === this.deviceId) return; // Ignore own message
 
           if (payload.type === 'SYNC_UPDATE' && payload.timestamp) {
+            // Guard: Reject incoming dummy sample data
+            const isDummy = payload.data && payload.data.classes && payload.data.classes.some(c => c.student === 'Nguyễn Hoàng Nam' || c.name.includes('Lớp 12A'));
+            if (isDummy) {
+              console.warn('Rejected incoming dummy sample data from cloud.');
+              // Overwrite broker retained message with user real data
+              setTimeout(() => this.pushUpdate(), 500);
+              return;
+            }
+
             if (payload.timestamp > this.lastSyncTimestamp || isParentPortalMode()) {
               this.lastSyncTimestamp = payload.timestamp;
               AppState.importAllData(payload.data, true);
               if (isParentPortalMode()) {
                 renderParentPortal(currentParentClassId);
-                showToast('⚡ Giáo viên vừa cập nhật thông tin học tập & học phí!', 'info');
+                showToast('⚡ Giáo viên vừa cập nhật thông tin học tập!', 'info');
               } else {
                 const devName = payload.deviceName || 'thiết bị khác';
                 showToast(`⚡ Đã đồng bộ dữ liệu mới nhất từ ${devName}!`, 'info');

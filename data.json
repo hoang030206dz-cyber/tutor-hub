@@ -1,58 +1,16 @@
 ﻿{
-    "timestamp":  1794560550302,
-    "version":  "2.0",
-    "classes":  [
-                    {
-                        "target":  "Mục tiêu đạt 9.0+ kỳ thi THPT Quốc Gia môn Toán",
-                        "id":  "class-1",
-                        "feePerSession":  250000,
-                        "color":  "indigo",
-                        "schedule":  "Thứ Ba, Thứ Sáu (19:30 - 21:00)",
-                        "parentName":  "Chị Mai",
-                        "name":  "Lớp 12A - Toán THPT Quốc Gia",
-                        "subject":  "Toán 12 Nâng Cao",
-                        "colorHex":  "#4f46e5",
-                        "phone":  "0912.345.678",
-                        "student":  "Nguyễn Hoàng Nam"
-                    },
-                    {
-                        "target":  "Nắm chắc kiến thức điện từ học, giải các bài toán sóng dao động",
-                        "id":  "class-2",
-                        "feePerSession":  300000,
-                        "color":  "emerald",
-                        "schedule":  "Thứ Tư, Chủ Nhật (17:30 - 19:00)",
-                        "parentName":  "Bác Thanh",
-                        "name":  "Lớp 11B - Vật Lý VIP",
-                        "subject":  "Vật Lý 11 Chuyên Đề",
-                        "colorHex":  "#10b981",
-                        "phone":  "0988.765.432",
-                        "student":  "Trần Minh Quân \u0026 Lê Hải Đăng"
-                    },
-                    {
-                        "target":  "Cân bằng phản ứng oxi hóa khử, nắm vững bảng tuần hoàn hóa học",
-                        "id":  "class-3",
-                        "feePerSession":  220000,
-                        "color":  "purple",
-                        "schedule":  "Thứ Hai, Thứ Năm (19:00 - 20:30)",
-                        "parentName":  "Cô Hạnh",
-                        "name":  "Lớp 10C - Hóa Học Nền Tảng",
-                        "subject":  "Hóa Học 10",
-                        "colorHex":  "#a855f7",
-                        "phone":  "0903.112.233",
-                        "student":  "Phạm Quỳnh Anh"
-                    },
-                    {
-                        "target":  "Chắc 8.5+ Toán vào lớp 10, thành thạo Vi-ét và hình học đường tròn",
-                        "id":  "class-4",
-                        "feePerSession":  250000,
-                        "color":  "amber",
-                        "schedule":  "Thứ Bảy, Chủ Nhật (08:30 - 10:00)",
-                        "parentName":  "Chị Lan",
-                        "name":  "Lớp 9D - Luyện Thi Vào 10",
-                        "subject":  "Toán 9 Tuyển Sinh 10",
-                        "colorHex":  "#f59e0b",
-                        "phone":  "0977.889.900",
-                        "student":  "Đỗ Tuấn Kiệt"
-                    }
-                ]
+  "version": "2.0",
+  "timestamp": 1794562000000,
+  "classes": [{"id":"class-1","name":"Toán 6 - FLC HH4","student":"Khôi","subject":"Toán 6","schedule":"Thứ Ba (19:30 - 21:30)","feePerSession":180000,"color":"indigo","colorHex":"#4f46e5","parentName":"Chú Bộ","phone":"Vô Thường","target":""},{"id":"class-2","name":"Toán 11 - Tân Mai","student":"Minh","subject":"Toán","schedule":"Thứ 4+7 (17:00 - 19:00)","feePerSession":180000,"color":"emerald","colorHex":"#10b981","parentName":"Cô Lan","phone":"","target":""},{"id":"class-3","name":"Toán 6 - Sky Garden gần cầu vĩnh tuy","student":"Sơn","subject":"Toán 6","schedule":"Thứ Sáu (19:30- 21:30)","feePerSession":180000,"color":"purple","colorHex":"#a855f7","parentName":"chị Thuỷ","phone":"0982901016","target":""},{"id":"class-4","name":"Toán 6_ Lê Văn Lương","student":"","subject":"toán","schedule":"Thứ 5 (18:00-20:00)","feePerSession":180000,"color":"amber","colorHex":"#f59e0b","parentName":"Cô Quỳnh Anh","phone":"0979779790","target":""}],
+  "sessions": [{"id":"sess-1794561464385","classId":"class-4","status":"completed","date":"2026-11-12","time":"18:00","duration":120,"topic":"test kiến thức","details":"các dạng bài cơ bản số tự nhiên và hình học\nso sánh, cộng trừ nhân chia số nguyên","homeworkTitle":"bài tập khoanh bút đỏ trong phiếu","homeworkDeadline":"2026-11-18","homeworkStatus":"pending","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1794362999275","classId":"class-1","status":"completed","date":"2026-11-10","time":"19:30","duration":135,"topic":"ƯCLN, BCNN","details":"","homeworkTitle":"bà tập khoanh trong đề cương","homeworkDeadline":"","homeworkStatus":"pending","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1794277472570","classId":"class-3","status":"completed","date":"2026-11-09","time":"19:30","duration":135,"topic":"số nguyên","details":"","homeworkTitle":"","homeworkDeadline":"","homeworkStatus":"none","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1793797856655","classId":"class-1","status":"completed","date":"2026-11-03","time":"19:30","duration":120,"topic":"Ôn thì giữa học kì 1","details":"","homeworkTitle":"","homeworkDeadline":"","homeworkStatus":"none","homeworkScore":"","rating":3,"notes":"","fee":180000}],
+  "exams": [{"id":"exam-1793847151367","classId":"class-1","category":"Đề thi thử","title":"20 BÀI TẬP CHƯƠNG 3 SỐ NGUYÊN","difficulty":"Khá","durationMinutes":"90","year":"","examUrl":"https://drive.google.com/file/d/1jKphXRIA1RE0tPg4MNDKFxlbXEC3QHPh/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1SPKks8liaIyvYPAmq7n1VNSPKGhSjnjc/view?usp=drive_link","notes":"","tags":["Đề thi thử","Khá"]},{"id":"exam-1793847059746","classId":"class-1","category":"Đề thi học kỳ","title":"KHO ĐỀ THI CK1","difficulty":"Khá","durationMinutes":"90","year":"26-27","examUrl":"https://drive.google.com/drive/folders/198zMhMPdPQV_3Aop0oVnOsmytrZmHhAv?usp=drive_link","solutionUrl":"","notes":"","tags":["Đề thi học kỳ","Khá"]},{"id":"exam-1793846995602","classId":"class-1","category":"Đề thi thử","title":"BÀI TẬP CHƯƠNG 9","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1leBWP1aBE29u-HPBRYxlFFC0MbQ6OAZe/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1Li6bb5s7MMe22iBkAMdZ08CWSx9vB3wT/view?usp=drive_link","notes":"","tags":["Đề thi thử","Cơ bản"]},{"id":"exam-1793846957908","classId":"class-1","category":"Đề thi thử","title":"CHƯƠNG 9","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/1InNpJGyIyl7RgfHOkAc5gH50KC8vKFlH/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Đề thi thử","Cơ bản"]},{"id":"exam-1793846932379","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 8","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1iuSBNpgU8mBc5RMuoFuTa7q5IQ_SHuvM/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1AIiptSwF3_nxCHHg3CuXDTsLH14yhYCK/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Cơ bản"]},{"id":"exam-1793846886710","classId":"class-1","category":"Tài liệu công thức","title":"CHƯƠNG 8","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/17bm1gH5lh-837MxZ0K93Muagbnx0yhUh/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793846852440","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 6+7","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1-RCOTr5E4mVGVUYDCZksHYw-NS5KPz1_/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1jSXheX1SbJK690OdJKpBFlpwNsf3a9lR/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Cơ bản"]},{"id":"exam-1793846819836","classId":"class-1","category":"Tài liệu công thức","title":"CHƯƠNG 6+7","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://docs.google.com/document/d/1-l0yQeiyvqEykNPaaIjlNqe8M1VmixCA/edit?usp=drive_link&ouid=102173829098993468380&rtpof=true&sd=true","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793846701130","classId":"class-1","category":"Chuyên đề ôn tập","title":"20 BÀI TẬP CHƯƠNG 4+5","difficulty":"Khá","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1X9Ysp3wdvyysTTyZPpVcP3WDspVjZQqo/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1RSYB7NI_EwoT6ATM89Deve4hgPeVVy-7/view?usp=drive_link","notes":"","tags":["Chuyên đề ôn tập","Khá"]},{"id":"exam-1793801210580","classId":"class-1","category":"Tài liệu công thức","title":"Chương 4+5: Hình Học Trực Quan","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1NOFZUBsKpxMdqZbOChWYsuHrkp5VKmnj/view?usp=drive_link","solutionUrl":"","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-1793799158371","classId":"class-3","category":"Tài liệu công thức","title":"Chương 2: Số Nguyên","difficulty":"Cơ bản","durationMinutes":"","year":"","examUrl":"https://drive.google.com/file/d/1EAGnAbGqnw_avzRkck0dVWmH4ARDyNbL/view?usp=drive_link","solutionUrl":"https://drive.google.com/file/d/1v346_GmcZYz78xr3_4nMorTmbXFMQZih/view?usp=drive_link","notes":"","tags":["Tài liệu công thức","Cơ bản"]},{"id":"exam-103","classId":"class-1","title":"Ôn GK1","category":"Chuyên đề ôn tập","difficulty":"Khá","durationMinutes":"90 phút","year":"2026","examUrl":"https://drive.google.com/file/d/1FgOIPSTQ1n0sMXEG1-AKnVaFRVIZzAhz/view?usp=drive_link","solutionUrl":"","notes":"","tags":["Giữa Kỳ 1","Toán 12"]}],
+  "settings": {
+    "syncCode": "giasu-hoang030206",
+    "adminPin": "1234",
+    "bankId": "MB",
+    "bankAccount": "",
+    "bankAccountName": "",
+    "tuitionStatus": {}
+  },
+  "theme": "dark"
 }
