@@ -2375,14 +2375,8 @@ function renderParentPortal(classId) {
         </div>
       `;
     } else {
-      vietQrSection.innerHTML = `
-        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700 text-xs text-slate-600 dark:text-slate-300 flex items-center justify-between">
-          <div>
-            <strong>Thông Tin Học Phí Tháng:</strong> ${completedSessions.length} buổi x ${formatVND(feeRate)} = <span class="font-bold text-indigo-600 dark:text-indigo-400">${formatVND(totalTuition)}</span>
-          </div>
-          <span class="text-slate-400">(Gia sư có thể cập nhật tài khoản ngân hàng trong phần Cài Đặt)</span>
-        </div>
-      `;
+      vietQrSection.innerHTML = '';
+      vietQrSection.classList.add('hidden');
     }
   }
 
