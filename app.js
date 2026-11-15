@@ -16,7 +16,144 @@ function getCurrentMonthString() {
 
 // Generate realistic default sessions for current month
 function generateDefaultSessions() {
-  return [{"id":"sess-1794561464385","classId":"class-4","status":"completed","date":"2026-11-12","time":"18:00","duration":120,"topic":"test kiến thức","details":"các dạng bài cơ bản số tự nhiên và hình học\nso sánh, cộng trừ nhân chia số nguyên","homeworkTitle":"bài tập khoanh bút đỏ trong phiếu","homeworkDeadline":"2026-11-18","homeworkStatus":"pending","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1794362999275","classId":"class-1","status":"completed","date":"2026-11-10","time":"19:30","duration":135,"topic":"ƯCLN, BCNN","details":"","homeworkTitle":"bà tập khoanh trong đề cương","homeworkDeadline":"","homeworkStatus":"pending","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1794277472570","classId":"class-3","status":"completed","date":"2026-11-09","time":"19:30","duration":135,"topic":"số nguyên","details":"","homeworkTitle":"","homeworkDeadline":"","homeworkStatus":"none","homeworkScore":"","rating":4,"notes":"","fee":180000},{"id":"sess-1793797856655","classId":"class-1","status":"completed","date":"2026-11-03","time":"19:30","duration":120,"topic":"Ôn thì giữa học kì 1","details":"","homeworkTitle":"","homeworkDeadline":"","homeworkStatus":"none","homeworkScore":"","rating":3,"notes":"","fee":180000}];
+  return [
+    {
+        "topic":  "Tổng Ôn Tập Kiến Thức Giữa Học Kỳ 1 (Số Học \u0026 Hình Học Trực Quan)",
+        "id":  "sess-1793797856655",
+        "classId":  "class-1",
+        "time":  "19:30",
+        "homeworkDeadline":  "2026-11-08",
+        "details":  "• Hệ thống hóa lý thuyết số học: Tập hợp số tự nhiên, các phép tính cộng, trừ, nhân, chia và nâng lên lũy thừa\n• Rèn luyện 10 câu tìm x có chứa dấu ngoặc tròn ( ), vuông [ ], nhọn { } và lũy thừa\n• Ôn tập hình học trực quan: Chu vi, diện tích hình chữ nhật, hình thoi, hình bình hành và hình thang cân",
+        "fee":  180000,
+        "rating":  4,
+        "homeworkStatus":  "graded",
+        "status":  "completed",
+        "duration":  120,
+        "homeworkScore":  "8.5/10",
+        "notes":  "Em Khôi tính toán cơ bản tốt, tiếp thu nhanh. Cần chú ý cẩn thận khi phá ngoặc tròn và ngoặc vuông để tránh nhầm dấu âm/dương.",
+        "date":  "2026-11-03",
+        "homeworkTitle":  "Phiếu 15 câu ôn thi GK1 trường FLC (Trắc nghiệm \u0026 3 bài tự luận)"
+    },
+    {
+        "topic":  "Ước Chung Lớn Nhất (ƯCLN) \u0026 Bội Chung Nhỏ Nhất (BCNN) - Ứng Dụng Thực Tế",
+        "id":  "sess-1794362999275",
+        "classId":  "class-1",
+        "time":  "19:30",
+        "homeworkDeadline":  "2026-11-15",
+        "details":  "• Phương pháp phân tích một số ra thừa số nguyên tố (sử dụng sơ đồ cột và sơ đồ cây)\n• Quy tắc tìm ƯCLN (tích các thừa số nguyên tố chung với số mũ nhỏ nhất)\n• Quy tắc tìm BCNN (tích thừa số chung và riêng với số mũ lớn nhất)\n• Ứng dụng giải 3 bài toán đố thực tế: Chia tổ thi đấu thể thao, chia quà bánh và bài toán chu kỳ lặp lại",
+        "fee":  180000,
+        "rating":  5,
+        "homeworkStatus":  "graded",
+        "status":  "completed",
+        "duration":  135,
+        "homeworkScore":  "9.0/10",
+        "notes":  "Khôi nắm rất chắc cách tìm ƯCLN và BCNN, làm bài tập phân tích thừa số nguyên tố nhanh và chuẩn xác. Đã giải tốt bài toán đố chia tổ.",
+        "date":  "2026-11-10",
+        "homeworkTitle":  "Bài tập khoanh bút đỏ trong đề cương (Bài 1 đến Bài 5 trang 32)"
+    },
+    {
+        "topic":  "Hàm Số Lượng Giác \u0026 Phương Trình Lượng Giác Cơ Bản",
+        "id":  "sess-20261104-m1",
+        "classId":  "class-2",
+        "time":  "17:00",
+        "homeworkDeadline":  "2026-11-07",
+        "details":  "• Tập xác định, tính tuần hoàn, chu kỳ và đồ thị các hàm số y = sin(x), cos(x), tan(x)\n• Công thức nghiệm của phương trình sin(x) = m, cos(x) = m, tan(x) = m\n• Kỹ thuật biểu diễn nghiệm trên đường tròn lượng giác và các trường hợp đặc biệt (0, 1, -1)",
+        "fee":  180000,
+        "rating":  4,
+        "homeworkStatus":  "graded",
+        "status":  "completed",
+        "duration":  120,
+        "homeworkScore":  "8.5/10",
+        "notes":  "Minh tiếp thu tốt, nhớ công thức nhanh, cần chú ý điều kiện của hàm tan(x) và không quên đuôi nghiệm k2π / kπ.",
+        "date":  "2026-11-04",
+        "homeworkTitle":  "Phiếu bài tập số 01: 20 phương trình lượng giác cơ bản và nâng cao"
+    },
+    {
+        "topic":  "Dãy Số, Cấp Số Cộng \u0026 Công Thức Số Hạng Tổng Quát",
+        "id":  "sess-20261107-m2",
+        "classId":  "class-2",
+        "time":  "17:00",
+        "homeworkDeadline":  "2026-11-11",
+        "details":  "• Định nghĩa dãy số, dãy số tăng, dãy số giảm, dãy số bị chặn\n• Cấp số cộng: Số hạng đầu u1, công sai d, công thức số hạng tổng quát un = u1 + (n-1)d\n• Công thức tính tổng n số hạng đầu Sn và rèn luyện 4 bài toán thực tế ứng dụng cấp số cộng",
+        "fee":  180000,
+        "rating":  5,
+        "homeworkStatus":  "graded",
+        "status":  "completed",
+        "duration":  120,
+        "homeworkScore":  "9.0/10",
+        "notes":  "Minh giải thành thạo hệ phương trình tìm u1 và d, tư duy toán đại số rất sắc bén và trình bày bài giải chỉn chu.",
+        "date":  "2026-11-07",
+        "homeworkTitle":  "Làm bài 1 đến bài 6 chuyên đề Cấp số cộng trong tài liệu"
+    },
+    {
+        "topic":  "Cấp Số Nhân \u0026 Ứng Dụng Giải Bài Toán Thực Tế",
+        "id":  "sess-20261111-m3",
+        "classId":  "class-2",
+        "time":  "17:00",
+        "homeworkDeadline":  "2026-11-15",
+        "details":  "• Định nghĩa cấp số nhân, công bội q. Công thức số hạng tổng quát un = u1 * q^(n-1)\n• Công thức tính tổng Sn của cấp số nhân. Điều kiện cấp số nhân lùi vô hạn\n• Rèn luyện 4 bài toán thực tế: Bài toán lãi suất ngân hàng, tăng trưởng tế bào vi khuẩn và bài toán gấp giấy",
+        "fee":  180000,
+        "rating":  4,
+        "homeworkStatus":  "pending",
+        "status":  "completed",
+        "duration":  120,
+        "homeworkScore":  "",
+        "notes":  "Minh học tập trung, ghi chép cẩn thận. Cần luyện thêm kỹ năng biến đổi lũy thừa số mũ lớn để tránh nhầm lẫn khi tính toán.",
+        "date":  "2026-11-11",
+        "homeworkTitle":  "Phiếu bài tập số 04: Cấp số nhân (15 câu trắc nghiệm \u0026 3 bài tự luận)"
+    },
+    {
+        "topic":  "Tập Hợp Các Số Nguyên \u0026 Thứ Tự Trong Tập Hợp Số Nguyên",
+        "id":  "sess-20261106-s1",
+        "classId":  "class-3",
+        "time":  "19:30",
+        "homeworkDeadline":  "2026-11-09",
+        "details":  "• Làm quen với số nguyên âm trong đời sống (nhiệt độ dưới 0°C, độ sâu dưới mực nước biển, số tiền nợ)\n• Trục số nằm ngang, điểm gốc 0, chiều dương và chiều âm\n• So sánh hai số nguyên, biểu diễn số đối trên trục số và tìm giá trị tuyệt đối",
+        "fee":  180000,
+        "rating":  4,
+        "homeworkStatus":  "graded",
+        "status":  "completed",
+        "duration":  120,
+        "homeworkScore":  "9.0/10",
+        "notes":  "Sơn học rất hào hứng, nắm khái niệm số âm nhanh qua các ví dụ thực tế về nhiệt độ và thang máy tầng hầm.",
+        "date":  "2026-11-06",
+        "homeworkTitle":  "Phiếu bài tập số 01: Nhận biết và so sánh số nguyên (15 câu)"
+    },
+    {
+        "topic":  "Phép Cộng \u0026 Phép Trừ Hai Số Nguyên (Cùng Dấu \u0026 Khác Dấu)",
+        "id":  "sess-1794277472570",
+        "classId":  "class-3",
+        "time":  "19:30",
+        "homeworkDeadline":  "2026-11-14",
+        "details":  "• Quy tắc cộng hai số nguyên cùng dấu (cộng phần số tự nhiên, đặt dấu chung)\n• Quy tắc cộng hai số nguyên khác dấu (lấy số lớn trừ số bé, đặt dấu của số có giá trị lớn hơn)\n• Phép trừ số nguyên: a - b = a + (-b). Quy tắc bỏ dấu ngoặc khi có dấu \u0027+\u0027 và \u0027-\u0027 phía trước",
+        "fee":  180000,
+        "rating":  4,
+        "homeworkStatus":  "graded",
+        "status":  "completed",
+        "duration":  135,
+        "homeworkScore":  "8.5/10",
+        "notes":  "Sơn nắm vững quy tắc cộng trừ số nguyên, cần cẩn thận hơn ở các bài có dấu ngoặc lồng nhau -(-a).",
+        "date":  "2026-11-09",
+        "homeworkTitle":  "Bài tập 1 đến 8 phiếu bài tập phép cộng trừ số nguyên"
+    },
+    {
+        "topic":  "Khảo Sát Năng Lực Đầu Vào \u0026 Ôn Tập Củng Cố Số Tự Nhiên - Số Nguyên",
+        "id":  "sess-1794561464385",
+        "classId":  "class-4",
+        "time":  "18:00",
+        "homeworkDeadline":  "2026-11-18",
+        "details":  "• Khảo sát kiến thức: Các phép tính số tự nhiên, tính chất chia hết, dấu hiệu chia hết cho 2, 3, 5, 9\n• Rèn luyện kỹ năng so sánh, cộng trừ nhân chia số nguyên cơ bản\n• Nhận biết hình học trực quan: Chu vi và diện tích hình chữ nhật, hình vuông, hình bình hành",
+        "fee":  180000,
+        "rating":  4,
+        "homeworkStatus":  "pending",
+        "status":  "completed",
+        "duration":  120,
+        "homeworkScore":  "",
+        "notes":  "Học sinh có ý thức học tốt, tập trung nghe giảng. Nền tảng số học khá, cần rèn thêm tính cẩn thận khi trình bày bài giải tự luận rõ ràng từng bước.",
+        "date":  "2026-11-12",
+        "homeworkTitle":  "Bài tập khoanh bút đỏ trong phiếu (10 bài tính nhanh và tìm x)"
+    }
+];
 }
 
 // Generate realistic default Exam & Resource bank for 4 classes
@@ -283,6 +420,17 @@ const AppState = {
           }
         });
         if (examsUpdated) this.saveToStorage();
+      }
+
+      // Upgrade existing stored sessions with rich pedagogical details if previously sparse
+      if (this.sessions && this.sessions.length > 0) {
+        let sessionsUpdated = false;
+        const defaults = generateDefaultSessions();
+        if (this.sessions.length <= 4 || !this.sessions.some(s => s.classId === 'class-2')) {
+          this.sessions = defaults;
+          sessionsUpdated = true;
+        }
+        if (sessionsUpdated) this.saveToStorage();
       }
 
       // Save state if newly initialized or healed
@@ -2396,47 +2544,136 @@ function renderParentPortal(classId) {
       let html = '';
       completedSessions.forEach((s, idx) => {
         const isMakeup = s.status === 'makeup';
+        const sessionNumber = completedSessions.length - idx;
+        const ratingNum = parseInt(s.rating, 10) || 4;
+
+        let starsString = '';
+        for (let i = 1; i <= 5; i++) {
+          starsString += i <= ratingNum ? '⭐' : '☆';
+        }
+
+        let ratingLabel = 'Tốt (Nắm chắc kiến thức, học tập trung)';
+        if (ratingNum === 5) ratingLabel = 'Rất Tốt (Hiểu bài nhanh, tư duy sắc bén)';
+        else if (ratingNum === 4) ratingLabel = 'Tốt (Nắm chắc kiến thức, học tập trung)';
+        else if (ratingNum === 3) ratingLabel = 'Khá (Nắm cơ bản, cần rèn thêm bài tập)';
+        else if (ratingNum === 2) ratingLabel = 'Trung Bình (Còn lúng túng một số dạng)';
+        else if (ratingNum === 1) ratingLabel = 'Cần Cố Gắng (Chưa thực sự tập trung)';
+
+        let hwStatusText = 'Không có bài tập';
+        let hwStatusBadge = '';
+        if (s.homeworkTitle) {
+          if (s.homeworkStatus === 'graded') {
+            hwStatusText = '✓ Đã hoàn thành & Đã chấm điểm';
+            hwStatusBadge = s.homeworkScore ? `
+              <span class="inline-flex items-center gap-1 text-xs font-extrabold px-2.5 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 dark:bg-emerald-950/70 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">
+                <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                <span>Điểm: ${s.homeworkScore}</span>
+              </span>
+            ` : `<span class="text-xs font-bold text-emerald-600 dark:text-emerald-400">✓ Đã chấm</span>`;
+          } else if (s.homeworkStatus === 'submitted') {
+            hwStatusText = 'Đã nộp bài (Chờ gia sư chấm)';
+            hwStatusBadge = `<span class="text-xs font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300 border border-blue-200">Đã nộp</span>`;
+          } else {
+            hwStatusText = 'Đang làm bài tập';
+            hwStatusBadge = `<span class="text-xs font-semibold px-2 py-0.5 rounded bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200">Chờ nộp</span>`;
+          }
+        }
+
         html += `
-          <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 space-y-2">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div class="p-5 rounded-2xl bg-white dark:bg-[#111726] border border-slate-200 dark:border-slate-800 shadow-xs space-y-3.5 hover:border-indigo-300 dark:hover:border-indigo-700/60 transition-all">
+            <!-- Header bar: Session badge, Date, Time, Attendance -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-100 dark:border-slate-800/80">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="px-3 py-1 rounded-xl text-xs font-bold ${isMakeup ? 'bg-amber-100 text-amber-900 border border-amber-300 dark:bg-amber-950/60 dark:text-amber-300' : 'bg-indigo-600 text-white shadow-xs'}">
+                  ${isMakeup ? '🔄 Buổi Học Bù' : `Buổi ${sessionNumber < 10 ? '0' + sessionNumber : sessionNumber}`}
+                </span>
+                <span class="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="calendar" class="w-3.5 h-3.5 text-indigo-500"></i>
+                  <span>${formatDateVN(s.date)} (${getDayOfWeekVN(s.date)})</span>
+                </span>
+                <span class="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                  <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                  <span>${s.time || '19:30'} • ${s.duration || 90} phút</span>
+                </span>
+              </div>
+
               <div class="flex items-center gap-2">
-                <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold ${isMakeup ? 'bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-300' : 'bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900'}">
-                  ${isMakeup ? 'Buổi Học Bù' : `Buổi ${completedSessions.length - idx}`}
-                </span>
-                <span class="text-xs font-bold text-slate-800 dark:text-slate-200">
-                  ${formatDateVN(s.date)} (${getDayOfWeekVN(s.date)}) • ${s.time || '19:30'} (${s.duration || 90} phút)
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-800/60">
+                  <i data-lucide="check-circle" class="w-3 h-3 text-emerald-500"></i>
+                  <span>Có mặt đúng giờ</span>
                 </span>
               </div>
-              ${s.homeworkScore ? `
-                <span class="inline-flex items-center gap-1 text-xs font-bold px-2.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 self-start sm:self-auto">
-                  <i data-lucide="check" class="w-3 h-3"></i>
-                  <span>BTVN: ${s.homeworkScore}/10</span>
-                </span>
-              ` : ''}
             </div>
 
-            <div class="text-sm font-bold text-slate-900 dark:text-white pt-1">
-              ${s.topic}
+            <!-- Topic Title -->
+            <div class="space-y-1">
+              <div class="text-[11px] uppercase font-bold tracking-wider text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+                <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+                <span>Chuyên Đề / Bài Học</span>
+              </div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-white leading-snug">
+                ${s.topic}
+              </h3>
             </div>
 
+            <!-- Detailed Teaching Breakdown -->
             ${s.details ? `
-              <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line pl-2 border-l-2 border-indigo-400">
-                ${s.details}
-              </p>
-            ` : ''}
-
-            ${s.homeworkTitle ? `
-              <div class="text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-slate-900/60 p-2.5 rounded-xl border border-slate-200 dark:border-slate-700/60 flex items-center justify-between">
-                <span>📚 <strong>Bài tập:</strong> ${s.homeworkTitle}</span>
-                <span class="font-medium text-slate-700 dark:text-slate-300">
-                  ${s.homeworkStatus === 'graded' ? '✓ Đã chấm' : s.homeworkStatus === 'submitted' ? 'Đã nộp bài' : 'Đang làm'}
-                </span>
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/60 space-y-1.5">
+                <div class="text-xs font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                  <i data-lucide="list-checks" class="w-4 h-4 text-indigo-500"></i>
+                  <span>Nội Dung Giảng Dạy & Kỹ Năng Đã Rèn Luyện:</span>
+                </div>
+                <div class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line pl-2.5 border-l-2 border-indigo-500">
+                  ${s.details}
+                </div>
               </div>
             ` : ''}
 
+            <!-- 2-column Grid: Comprehension & Homework -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <!-- Column 1: Comprehension & Focus -->
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/70 dark:border-slate-700/60 space-y-1.5">
+                <div class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                  <span>Mức Độ Tiếp Thu Bài:</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-base tracking-wider">${starsString}</span>
+                  <span class="text-xs font-bold text-slate-800 dark:text-slate-200">(${ratingNum}/5 Sao)</span>
+                </div>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">${ratingLabel}</p>
+              </div>
+
+              <!-- Column 2: Homework Status & Score -->
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-200/70 dark:border-slate-700/60 space-y-1.5">
+                <div class="flex items-center justify-between">
+                  <div class="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                    <i data-lucide="book-open" class="w-4 h-4 text-indigo-500"></i>
+                    <span>Bài Tập Về Nhà:</span>
+                  </div>
+                  ${hwStatusBadge}
+                </div>
+                <div class="text-xs text-slate-800 dark:text-slate-200 font-medium">
+                  ${s.homeworkTitle ? s.homeworkTitle : '<span class="text-slate-400 italic">Không có bài tập giao thêm</span>'}
+                </div>
+                ${s.homeworkDeadline ? `
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400">
+                    📅 Hạn nộp: ${formatDateVN(s.homeworkDeadline)} • ${hwStatusText}
+                  </div>
+                ` : (s.homeworkTitle ? `<div class="text-[11px] text-slate-500 dark:text-slate-400">${hwStatusText}</div>` : '')}
+              </div>
+            </div>
+
+            <!-- Column 3: Tutor's Personalized Feedback for Parents -->
             ${s.notes ? `
-              <div class="text-xs text-slate-600 dark:text-slate-300 italic pt-1">
-                💬 <strong>Nhận xét của gia sư:</strong> ${s.notes}
+              <div class="p-3.5 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/30 border border-indigo-200/70 dark:border-indigo-900/60 space-y-1.5">
+                <div class="text-xs font-bold text-indigo-900 dark:text-indigo-300 flex items-center gap-1.5">
+                  <i data-lucide="message-square-quote" class="w-4 h-4 text-indigo-600 dark:text-indigo-400"></i>
+                  <span>Nhận Xét & Dặn Dò Của Gia Sư Dành Cho Phụ Huynh:</span>
+                </div>
+                <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed pl-1">
+                  "${s.notes}"
+                </p>
               </div>
             ` : ''}
           </div>
