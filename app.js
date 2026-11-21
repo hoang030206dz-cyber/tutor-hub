@@ -18,6 +18,74 @@ function getCurrentMonthString() {
 function generateDefaultSessions() {
   return [
     {
+        "id":  "sess-1795239024291",
+        "classId":  "class-3",
+        "status":  "completed",
+        "date":  "2026-11-20",
+        "time":  "19:30",
+        "duration":  90,
+        "topic":  "HHH",
+        "details":  "• Rèn luyện kỹ năng tính toán và giải toán số học\n• Ôn tập các phép tính và bài tập củng cố",
+        "homeworkTitle":  "Phiếu bài tập số 03 rèn luyện",
+        "homeworkDeadline":  "2026-11-24",
+        "homeworkStatus":  "graded",
+        "homeworkScore":  "9.0/10",
+        "rating":  4,
+        "notes":  "Học sinh hiểu bài tốt, làm bài tập đầy đủ và cẩn thận.",
+        "fee":  180000
+    },
+    {
+        "id":  "sess-1795239033587",
+        "classId":  "class-4",
+        "status":  "completed",
+        "date":  "2026-11-19",
+        "time":  "19:30",
+        "duration":  90,
+        "topic":  "M",
+        "details":  "• Khảo sát kiến thức và rèn luyện kỹ năng số học\n• Thực hành các dạng toán cơ bản và nâng cao",
+        "homeworkTitle":  "Bài tập về nhà phiếu tự luyện",
+        "homeworkDeadline":  "2026-11-23",
+        "homeworkStatus":  "graded",
+        "homeworkScore":  "8.5/10",
+        "rating":  4,
+        "notes":  "Tiếp thu nhanh, tập trung học tập, cần chú ý tính toán cẩn thận.",
+        "fee":  180000
+    },
+    {
+        "id":  "sess-1795238972316",
+        "classId":  "class-1",
+        "status":  "completed",
+        "date":  "2026-11-17",
+        "time":  "19:30",
+        "duration":  90,
+        "topic":  "HHH",
+        "details":  "• Luyện tập nâng cao các dạng bài số tự nhiên và phân tích thừa số nguyên tố\n• Giải bài toán thực tế chia tổ và chu kỳ",
+        "homeworkTitle":  "Phiếu 10 câu trắc nghiệm và 2 bài tự luận",
+        "homeworkDeadline":  "2026-11-21",
+        "homeworkStatus":  "graded",
+        "homeworkScore":  "9.0/10",
+        "rating":  5,
+        "notes":  "Khôi giải toán nhanh, tư duy tốt, hoàn thành xuất sắc các bài tập.",
+        "fee":  180000
+    },
+    {
+        "id":  "sess-1795239018085",
+        "classId":  "class-3",
+        "status":  "completed",
+        "date":  "2026-11-16",
+        "time":  "19:30",
+        "duration":  90,
+        "topic":  "Bù T6",
+        "details":  "• Buổi học bù ngày Thứ Sáu: Ôn tập củng cố quy tắc dấu và các phép tính số nguyên\n• Thực hành giải bài toán có dấu ngoặc lồng nhau",
+        "homeworkTitle":  "Bài tập củng cố phép cộng trừ số nguyên",
+        "homeworkDeadline":  "2026-11-20",
+        "homeworkStatus":  "graded",
+        "homeworkScore":  "8.5/10",
+        "rating":  4,
+        "notes":  "Học bù nghiêm túc, chú ý lắng nghe và sửa các lỗi sai nhỏ về dấu.",
+        "fee":  180000
+    },
+    {
         "topic":  "Tổng Ôn Tập Kiến Thức Giữa Học Kỳ 1 (Số Học \u0026 Hình Học Trực Quan)",
         "id":  "sess-1793797856655",
         "classId":  "class-1",
@@ -395,46 +463,57 @@ const AppState = {
       const storedExams = localStorage.getItem('tutortrack_exams');
       const storedTheme = localStorage.getItem('tutortrack_theme');
       const storedSettings = localStorage.getItem('tutortrack_settings');
+      const storedLastMod = localStorage.getItem('tutortrack_last_modified');
 
-      // Auto-heal: If localStorage has dummy sample data ("Nguyễn Hoàng Nam" / "Lớp 12A"), restore user genuine data
-      const isDummyStorage = storedClasses && (storedClasses.includes('Nguyễn Hoàng Nam') || storedClasses.includes('Lớp 12A - Toán THPT'));
+      // 1. Classes: prioritize user stored classes, only fallback to default if not yet stored
+      if (storedClasses) {
+        try {
+          const parsed = JSON.parse(storedClasses);
+          this.classes = (Array.isArray(parsed) && parsed.length > 0) ? parsed : DEFAULT_CLASSES;
+        } catch (e) {
+          this.classes = DEFAULT_CLASSES;
+        }
+      } else {
+        this.classes = DEFAULT_CLASSES;
+      }
 
-      this.classes = (storedClasses && !isDummyStorage) ? JSON.parse(storedClasses) : DEFAULT_CLASSES;
-      this.sessions = (storedSessions && !isDummyStorage) ? JSON.parse(storedSessions) : generateDefaultSessions();
-      this.exams = (storedExams && !isDummyStorage) ? JSON.parse(storedExams) : generateDefaultExams();
+      // 2. Sessions: ALWAYS prioritize user stored sessions! NEVER overwrite or reset with defaults!
+      if (storedSessions) {
+        try {
+          const parsed = JSON.parse(storedSessions);
+          this.sessions = Array.isArray(parsed) ? parsed : generateDefaultSessions();
+        } catch (e) {
+          this.sessions = generateDefaultSessions();
+        }
+      } else {
+        this.sessions = generateDefaultSessions();
+      }
+
+      // 3. Exams: prioritize user stored exams
+      if (storedExams) {
+        try {
+          const parsed = JSON.parse(storedExams);
+          this.exams = Array.isArray(parsed) ? parsed : generateDefaultExams();
+        } catch (e) {
+          this.exams = generateDefaultExams();
+        }
+      } else {
+        this.exams = generateDefaultExams();
+      }
+
+      // 4. Theme & Settings
       this.theme = storedTheme || 'dark';
+      this.lastModified = storedLastMod ? parseInt(storedLastMod, 10) : Date.now();
       this.settings = storedSettings ? { ...DEFAULT_SETTINGS, ...JSON.parse(storedSettings) } : { ...DEFAULT_SETTINGS };
 
-      // Ensure consistent syncCode across all devices
-      if (!this.settings.syncCode || (this.settings.syncCode.startsWith('giasu-') && this.settings.syncCode.length <= 15 && this.settings.syncCode !== DEFAULT_SYNC_ROOM)) {
+      if (!this.settings.syncCode) {
         this.settings.syncCode = DEFAULT_SYNC_ROOM;
       }
 
-      // Ensure all exams are marked as shared ('all') so all classes can access them
-      if (this.exams && this.exams.length > 0) {
-        let examsUpdated = false;
-        this.exams.forEach(ex => {
-          if (!ex.classId || ex.classId !== 'all') {
-            ex.classId = 'all';
-            examsUpdated = true;
-          }
-        });
-        if (examsUpdated) this.saveToStorage();
+      // Save initial defaults if brand new install
+      if (!storedClasses || !storedSessions) {
+        this.saveToStorage(true);
       }
-
-      // Upgrade existing stored sessions with rich pedagogical details if previously sparse
-      if (this.sessions && this.sessions.length > 0) {
-        let sessionsUpdated = false;
-        const defaults = generateDefaultSessions();
-        if (this.sessions.length <= 4 || !this.sessions.some(s => s.classId === 'class-2')) {
-          this.sessions = defaults;
-          sessionsUpdated = true;
-        }
-        if (sessionsUpdated) this.saveToStorage();
-      }
-
-      // Save state if newly initialized or healed
-      if (!storedClasses || isDummyStorage) this.saveToStorage();
     } catch (e) {
       console.error('Error loading state from localStorage:', e);
       this.classes = DEFAULT_CLASSES;
@@ -442,16 +521,19 @@ const AppState = {
       this.exams = generateDefaultExams();
       this.settings = { ...DEFAULT_SETTINGS };
       this.theme = 'dark';
+      this.lastModified = Date.now();
     }
   },
 
   saveToStorage(fromRemote = false) {
     try {
+      this.lastModified = Date.now();
       localStorage.setItem('tutortrack_classes', JSON.stringify(this.classes));
       localStorage.setItem('tutortrack_sessions', JSON.stringify(this.sessions));
       localStorage.setItem('tutortrack_exams', JSON.stringify(this.exams));
       localStorage.setItem('tutortrack_settings', JSON.stringify(this.settings));
       localStorage.setItem('tutortrack_theme', this.theme);
+      localStorage.setItem('tutortrack_last_modified', this.lastModified.toString());
 
       // Trigger Realtime Cloud Sync
       if (!fromRemote && typeof CloudSync !== 'undefined' && CloudSync.pushUpdate) {
@@ -469,7 +551,7 @@ const AppState = {
       sessions: this.sessions,
       exams: this.exams,
       settings: this.settings,
-      timestamp: Date.now()
+      timestamp: this.lastModified || Date.now()
     };
   },
 
@@ -480,6 +562,9 @@ const AppState = {
     if (payload.exams) this.exams = payload.exams;
     if (payload.settings) {
       this.settings = { ...this.settings, ...payload.settings };
+    }
+    if (payload.timestamp) {
+      this.lastModified = payload.timestamp;
     }
     this.saveToStorage(fromRemote);
     renderAll();
@@ -2162,27 +2247,23 @@ const CloudSync = {
         reconnectPeriod: 5000
       });
 
+      let initialSyncTimer = null;
+      let hasReceivedCloudData = false;
+
       this.mqttClient.on('connect', () => {
         this.updateStatus('live');
         this.mqttClient.subscribe(topic, { qos: 1 }, (err) => {
           if (err) console.error('Subscription error:', err);
         });
 
-        // If tutor mode (not parent portal), immediately push current state with retain flag so cloud always holds latest
-        if (!isParentPortalMode() && AppState.sessions && AppState.sessions.length > 0) {
-          const now = Date.now();
-          this.lastSyncTimestamp = now;
-          const data = AppState.exportAllData();
-          const isMob = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
-          const msg = {
-            type: 'SYNC_UPDATE',
-            deviceId: this.deviceId,
-            deviceName: isMob ? 'Điện thoại' : 'Máy tính',
-            timestamp: now,
-            data: data
-          };
-          this.mqttClient.publish(topic, JSON.stringify(msg), { qos: 1, retain: true });
-        }
+        // Wait up to 2 seconds for cloud retained message to arrive before deciding to push
+        clearTimeout(initialSyncTimer);
+        initialSyncTimer = setTimeout(() => {
+          if (!hasReceivedCloudData && !isParentPortalMode() && AppState.sessions && AppState.sessions.length > 0) {
+            // No cloud data arrived, push our current state so broker has it
+            CloudSync.pushUpdate();
+          }
+        }, 2000);
       });
 
       this.mqttClient.on('message', (receivedTopic, messageBuffer) => {
@@ -2190,18 +2271,23 @@ const CloudSync = {
           const payload = JSON.parse(messageBuffer.toString());
           if (payload.deviceId === this.deviceId) return; // Ignore own message
 
+          hasReceivedCloudData = true;
+          clearTimeout(initialSyncTimer);
+
           if (payload.type === 'SYNC_UPDATE' && payload.timestamp) {
             // Guard: Reject incoming dummy sample data
             const isDummy = payload.data && payload.data.classes && payload.data.classes.some(c => c.student === 'Nguyễn Hoàng Nam' || c.name.includes('Lớp 12A'));
             if (isDummy) {
               console.warn('Rejected incoming dummy sample data from cloud.');
-              // Overwrite broker retained message with user real data
               setTimeout(() => this.pushUpdate(), 500);
               return;
             }
 
-            if (payload.timestamp > this.lastSyncTimestamp || isParentPortalMode()) {
-              this.lastSyncTimestamp = payload.timestamp;
+            const remoteTimestamp = payload.timestamp;
+            const localTimestamp = AppState.lastModified || 0;
+
+            if (isParentPortalMode() || remoteTimestamp > localTimestamp) {
+              this.lastSyncTimestamp = remoteTimestamp;
               AppState.importAllData(payload.data, true);
               if (isParentPortalMode()) {
                 renderParentPortal(currentParentClassId);
@@ -2210,6 +2296,9 @@ const CloudSync = {
                 const devName = payload.deviceName || 'thiết bị khác';
                 showToast(`⚡ Đã đồng bộ dữ liệu mới nhất từ ${devName}!`, 'info');
               }
+            } else if (localTimestamp > remoteTimestamp && !isParentPortalMode()) {
+              // Local is newer: push to cloud so cloud stays up-to-date
+              this.pushUpdate();
             }
           }
         } catch (err) {
@@ -2243,7 +2332,7 @@ const CloudSync = {
     this.updateStatus('syncing');
     clearTimeout(this.debounceTimer);
     this.debounceTimer = setTimeout(() => {
-      const now = Date.now();
+      const now = AppState.lastModified || Date.now();
       this.lastSyncTimestamp = now;
       const data = AppState.exportAllData();
       const isMob = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
@@ -2868,6 +2957,17 @@ window.addEventListener('DOMContentLoaded', () => {
   renderAll();
   checkParentPortalMode();
   setupEventListeners();
+});
+
+// Cross-window and Cross-tab storage synchronization
+window.addEventListener('storage', (e) => {
+  if (e.key && e.key.startsWith('tutortrack_')) {
+    AppState.loadFromStorage();
+    renderAll();
+    if (typeof isParentPortalMode === 'function' && isParentPortalMode()) {
+      renderParentPortal(currentParentClassId);
+    }
+  }
 });
 
 // Explicitly bind handlers to window for inline onclick attributes
